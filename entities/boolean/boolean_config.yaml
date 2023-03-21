@@ -1,0 +1,92 @@
+################################################################################
+reload_ha_configuration:
+  name: Recharger la configuration
+  icon: mdi:reload
+ha_restart:
+################################################################################
+modules_activation:
+  icon: mdi:toogle-switch
+  name: Modules
+module_lights:
+  icon: mdi:lightbulb-group
+  name: Lumières
+module_heat:
+  icon: mdi:radiator
+  name: Chauffage
+module_water_heat:
+  icon: mdi:water-boiler
+  name: Eau chaude
+module_cover:
+  icon: mdi:window-shutter
+  name: Volets roulants
+module_healty:
+  icon: mdi:bottle-tonic-plus
+  name: Sport et santé
+module_temperature:
+  icon: mdi:home-thermometer-outline
+  name: Température Humidité Ventilation
+################################################################################
+in_home_zone:
+  icon: mdi:exit-run
+  name: Dans la maison
+in_middle_zone:
+  icon: mdi:lock-open-variant-outline
+  name: Dans la zone moyenne
+in_big_zone:
+  name: Dans la grande zone
+invitation:
+  icon: mdi:account-plus
+  name: Mode invitation
+################################################################################
+heat:
+  icon: mdi:radiator
+  name: Chauffage
+################################################################################  
+water_heat_temp:
+  icon: mdi:toggle-switch
+  name: Activation manuelle
+################################################################################
+light_when_cloudy:
+  name: Lumière anti-nuages
+  icon: mdi:cloud-off-outline
+light_time_status:
+################################################################################
+alert_light:
+  name: Alerte lumineuse
+  icon: mdi:home-thermometer-outline
+alert_speaker:
+  name: Alerte audio
+  icon: mdi:home-thermometer-outline
+################################################################################
+reveil:
+  icon: mdi:alarm
+  name: Reveil ambiance
+################################################################################  
+stores_auto:
+  icon: mdi:window-shutter-open
+  name: Volets automatiques
+################################################################################  
+motivation:
+  icon: mdi:calendar-month-outline
+  name: Activités physiques
+walk:
+  icon: mdi:walk
+  name: Marche
+run:
+  icon: mdi:run
+  name: Course
+fitness:
+  icon: mdi:dumbbell
+  name: Musculation
+stretching:
+  icon: mdi:meditation
+  name: Etirement
+motivation_increment:
+  icon: mdi:numeric-positive-1
+  name: Incrémentation des chances
+motivation_resend:
+  icon: mdi:refresh
+  name: Renvoyer  les objectifs de la semaine
+motivation_reset:
+  icon: mdi:backup-restore
+  name: Réinitialisation

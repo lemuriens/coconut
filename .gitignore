@@ -1,7 +1,16 @@
-# EXCLUDE ######################
 *
-# INCLUDE ######################
 !.gitignore
+!README.txt
+
 !entities/
-entities/*
-!entities/*.user.yaml
+!entities/*/
+entities/*/**
+!entities/*/*_config.yaml
+
+!www/
+www/*
+!www/*.mp3
+
+!node-red/
+node-red/*
+!node-red/flows.json
