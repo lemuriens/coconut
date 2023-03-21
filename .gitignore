@@ -2,6 +2,6 @@
 *
 # INCLUDE ######################
 !.gitignore
-!entities/**/*user.yaml
-!www/*.mp3
-!node-red/flows.json
+!entities/
+entities/*
+!entities/*.user.yaml
