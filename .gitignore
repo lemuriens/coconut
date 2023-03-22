@@ -1,6 +1,6 @@
 *
 !.gitignore
-!README.txt
+!readme.me
 
 !entities/
 !entities/*/
