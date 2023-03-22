@@ -25,6 +25,9 @@ module_healty:
 module_temperature:
   icon: mdi:home-thermometer-outline
   name: Température Humidité Ventilation
+module_rainmeter:
+  icon: mdi:desktop-tower-monitor
+  name: Enable rainmeter
 ################################################################################
 in_home_zone:
   icon: mdi:exit-run
