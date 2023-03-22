@@ -14,3 +14,7 @@ www/*
 !node-red/
 node-red/*
 !node-red/flows.json
+
+!.storage/
+.storage/*
+!.storage/lovelace.dashboard_configuration
