@@ -93,3 +93,6 @@ motivation_resend:
 motivation_reset:
   icon: mdi:backup-restore
   name: Réinitialisation
+################################################################################
+update_available_on_lemuriens_coconut:
+update_from_lemuriens_coconut:

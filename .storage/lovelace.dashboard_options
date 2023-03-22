@@ -88,24 +88,31 @@
               "type": "vertical-stack",
               "cards": [
                 {
-                  "show_name": true,
-                  "show_icon": true,
-                  "type": "button",
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "automation.trigger",
-                    "target": {
-                      "entity_id": "automation.home_assistant_updates_important"
-                    },
-                    "data": {
-                      "skip_condition": true
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.update_available_on_lemuriens_coconut",
+                      "state": "on"
                     }
-                  },
-                  "icon": "mdi:arrow-down-thin-circle-outline",
-                  "icon_height": "50px",
-                  "name": "Mise à jour",
-                  "entity": "sensor.lemuriens_coconut_latest_commit",
-                  "show_state": true
+                  ],
+                  "card": {
+                    "show_name": true,
+                    "show_icon": true,
+                    "type": "button",
+                    "tap_action": {
+                      "action": "call-service",
+                      "service": "input_boolean.turn_on",
+                      "target": {
+                        "entity_id": "input_boolean.update_from_lemuriens_coconut"
+                      },
+                      "data": {}
+                    },
+                    "icon": "mdi:arrow-down-thin-circle-outline",
+                    "icon_height": "50px",
+                    "name": "Mise à jour",
+                    "entity": "sensor.lemuriens_coconut_latest_commit",
+                    "show_state": true
+                  }
                 },
                 {
                   "type": "entities",
