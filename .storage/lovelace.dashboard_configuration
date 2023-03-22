@@ -7,14 +7,11 @@
       "title": "home",
       "views": [
         {
+          "theme": "Backend-selected",
           "path": "default_view",
-          "title": "Home",
+          "title": "Configuration",
+          "badges": [],
           "cards": [
-            {
-              "title": "Distribution d’énergie aujourd’hui",
-              "type": "energy-distribution",
-              "link_dashboard": true
-            },
             {
               "type": "entities",
               "entities": [
@@ -185,21 +182,6 @@
                 "input_boolean.vp_power"
               ],
               "title": "Entrées"
-            },
-            {
-              "type": "grid",
-              "square": false,
-              "columns": 1,
-              "cards": [
-                {
-                  "type": "media-control",
-                  "entity": "media_player.google_home"
-                },
-                {
-                  "type": "media-control",
-                  "entity": "media_player.spotify_erwan_lemarchand"
-                }
-              ]
             },
             {
               "type": "entities",
