@@ -32,8 +32,7 @@
                         "entity": "input_boolean.light_when_cloudy"
                       },
                       {
-                        "entity": "sensor.lumiere_ext_illuminance_lux",
-                        "name": "Luminosité exterieure"
+                        "entity": "input_number.illuminance_light"
                       },
                       {
                         "entity": "input_number.cloudy_light"
