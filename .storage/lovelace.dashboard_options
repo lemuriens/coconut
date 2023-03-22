@@ -1,0 +1,340 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_options",
+  "data": {
+    "config": {
+      "title": "Options",
+      "views": [
+        {
+          "theme": "Backend-selected",
+          "path": "default_view",
+          "title": "Gestion des modules",
+          "badges": [],
+          "cards": [
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "entity": "input_boolean.module_lights",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "vertical-stack",
+                "cards": [
+                  {
+                    "entities": [
+                      {
+                        "entity": "input_number.color_rotate"
+                      },
+                      {
+                        "entity": "input_boolean.light_when_cloudy"
+                      },
+                      {
+                        "entity": "sensor.lumiere_ext_illuminance_lux",
+                        "name": "Luminosité exterieure"
+                      },
+                      {
+                        "entity": "input_number.cloudy_light"
+                      }
+                    ],
+                    "show_header_toggle": false,
+                    "title": "Lumières automatique",
+                    "type": "entities"
+                  },
+                  {
+                    "entities": [
+                      {
+                        "entity": "input_datetime.sun_angle_light_on_time"
+                      },
+                      {
+                        "entity": "input_number.sun_angle_light_on"
+                      },
+                      {
+                        "entity": "input_datetime.night_light_time"
+                      }
+                    ],
+                    "title": "Paramètres lumières au coucher du soleil",
+                    "type": "entities"
+                  },
+                  {
+                    "entities": [
+                      {
+                        "entity": "input_datetime.rise_light_time"
+                      },
+                      {
+                        "entity": "input_number.sun_angle_light_off"
+                      },
+                      {
+                        "entity": "input_datetime.sun_angle_light_off_time"
+                      }
+                    ],
+                    "title": "Paramètres lumières au lever du soleil",
+                    "type": "entities"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "input_boolean.modules_activation",
+                      "name": "Sélection des modules"
+                    }
+                  ],
+                  "state_color": false,
+                  "show_header_toggle": false
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.modules_activation",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "square": true,
+                    "columns": 3,
+                    "type": "grid",
+                    "cards": [
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_lights",
+                        "show_state": true,
+                        "icon_height": "40px"
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_heat",
+                        "show_state": true,
+                        "icon_height": "40px"
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_water_heat",
+                        "show_state": true,
+                        "icon_height": "40px"
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_healty",
+                        "show_state": true,
+                        "icon_height": "40px",
+                        "icon": "mdi:meditation"
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_cover",
+                        "show_state": true,
+                        "icon_height": "40px"
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
+                        "entity": "input_boolean.module_temperature",
+                        "show_state": true,
+                        "icon_height": "40px"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_cover",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "entities": [
+                          {
+                            "entity": "input_number.sun_angle_cover_on"
+                          },
+                          {
+                            "entity": "input_number.sun_angle_cover_off"
+                          }
+                        ],
+                        "title": "Volets automatiques",
+                        "type": "entities",
+                        "state_color": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_heat",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "entities": [
+                          {
+                            "entity": "input_boolean.heat",
+                            "name": "Chauffage automatique"
+                          }
+                        ],
+                        "title": "Chauffage automatique",
+                        "type": "entities",
+                        "state_color": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "entities": [
+                    {
+                      "entity": "input_boolean.invitation",
+                      "icon": "mdi:account-plus"
+                    },
+                    {
+                      "entity": "input_boolean.reveil"
+                    }
+                  ],
+                  "title": "Autres",
+                  "type": "entities",
+                  "show_header_toggle": false
+                },
+                {
+                  "entities": [
+                    {
+                      "entity": "input_number.low_batteries"
+                    }
+                  ],
+                  "title": "Alerte batterie des capteurs faible",
+                  "type": "entities"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_water_heat",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "entities": [
+                          {
+                            "entity": "input_number.water_heat_pct",
+                            "icon": "mdi:water-boiler",
+                            "name": "Pourcentage en heures creuses"
+                          },
+                          {
+                            "entity": "input_boolean.water_heat_temp",
+                            "icon": "mdi:toggle-switch",
+                            "name": "Activation manuel"
+                          },
+                          {
+                            "entity": "input_number.water_heat_duration",
+                            "icon": "mdi:av-timer",
+                            "name": "Temps d'activation manuel"
+                          }
+                        ],
+                        "title": "Chauffe-eau automatique",
+                        "type": "entities",
+                        "show_header_toggle": false
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_temperature",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "type": "entities",
+                        "entities": [
+                          "input_boolean.alert_light",
+                          "input_boolean.alert_speaker"
+                        ],
+                        "title": "Alertes",
+                        "show_header_toggle": false
+                      },
+                      {
+                        "type": "entities",
+                        "entities": [
+                          "input_number.temp_max",
+                          "input_number.temp_min"
+                        ],
+                        "title": "Alertes température",
+                        "show_header_toggle": false
+                      },
+                      {
+                        "type": "entities",
+                        "entities": [
+                          "input_number.humidity_max",
+                          "input_number.humidity_min"
+                        ],
+                        "title": "Alertes humidité",
+                        "show_header_toggle": false
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
