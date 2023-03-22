@@ -79,6 +79,15 @@
               "type": "vertical-stack",
               "cards": [
                 {
+                  "type": "markdown",
+                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
                   "type": "entities",
                   "entities": [
                     {
@@ -339,6 +348,24 @@
           "path": "sport",
           "badges": [],
           "cards": [
+            {
+              "type": "conditional",
+              "conditions": [
+                {
+                  "entity": "input_boolean.motivation",
+                  "state": "on"
+                },
+                {
+                  "entity": "input_boolean.motivation",
+                  "state": "on"
+                }
+              ],
+              "card": {
+                "type": "custom:html-template-card",
+                "ignore_line_breaks": true,
+                "content": "{{states(\"input_text.health_stats_1\")}}\n{{states(\"input_text.health_stats_2\")}}\n"
+              }
+            },
             {
               "cards": [
                 {
