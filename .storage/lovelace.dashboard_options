@@ -13,6 +13,15 @@
           "badges": [],
           "cards": [
             {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
+                }
+              ]
+            },
+            {
               "type": "conditional",
               "conditions": [
                 {
@@ -79,14 +88,25 @@
               "type": "vertical-stack",
               "cards": [
                 {
-                  "type": "markdown",
-                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
+                  "show_name": true,
+                  "show_icon": true,
+                  "type": "button",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "automation.trigger",
+                    "target": {
+                      "entity_id": "automation.home_assistant_updates_important"
+                    },
+                    "data": {
+                      "skip_condition": true
+                    }
+                  },
+                  "icon": "mdi:arrow-down-thin-circle-outline",
+                  "icon_height": "50px",
+                  "name": "Mise à jour",
+                  "entity": "sensor.lemuriens_coconut_latest_commit",
+                  "show_state": true
+                },
                 {
                   "type": "entities",
                   "entities": [
