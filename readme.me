@@ -4,7 +4,7 @@ INSTALL DUCKDNS
 FIX IP ADDRESS AND MAKE HTTPS FOR EXTERNAL ACCESS
 INSTALL TERMINAL & SSH
 INSTALL FILE EDITOR
-INSTALL NODE-RED
+INSTALL NODE-RED / INSTALL NODE-RED DEPENDENCIES : node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay
 INSTALL HACS
 GIT PULL
 INSTALL THEME / CUSTOM CARDS
@@ -23,28 +23,28 @@ sensor.lumiere_ext_illuminance_lux:
   alias: Luminosité exterieure
 
 # EXTERIOR TEMPERATURES | input_number.temp_ext ################################
-sensor.ble_temperature_a4c138efbeff:
+sensor.ble_temperature_:
   linkedClass: ext_temp
   linkedArea: exterior
   linkedEntity: input_number.temp_ext
   alias: exterieure
   
 # INTERIOR TEMPERATURES | input_number.temp_int_[1 to 10] ######################
-sensor.ble_temperature_582d34362a4d:
+sensor.ble_temperature_:
   linkedClass: int_temp
   linkedEntity: input_number.temp_int_1
   linkedArea: salon
   alias: de la maison
   
 # EXTERIOR HUMIDITIES | input_number.humidity_ext ##############################
-sensor.ble_humidity_a4c138efbeff:
+sensor.ble_humidity_:
   linkedClass: ext_humidity
   linkedEntity: input_number.humidity_ext
   linkedArea: exterior
   alias: exterieure
   
 # INTERIOR HUMIDITIES | input_number.humidity_int_[1 to 10] ####################
-sensor.ble_humidity_582d34362a4d:
+sensor.ble_humidity_:
   linkedClass: int_humidity
   linkedEntity: input_number.humidity_int_1
   linkedArea: salon
@@ -82,7 +82,7 @@ switch.switch_vmc:
   alias: du salon
   
 # WINDOWS ######################################################################
-binary_sensor.door_window_sensor_158d0003d47e37:
+binary_sensor.door_window_sensor_:
   linkedClass: window
   linkedArea: salon
   alias: du bureau
@@ -98,7 +98,7 @@ input_number.store_salon:
   alias: du salon
 
 # MOTIONS ######################################################################
-binary_sensor.motion_sensor_158d000271c350:
+binary_sensor.motion_sensor_:
   linkedClass: motion
   linkedArea: salon
   addNoMotionDelay: 0
@@ -128,7 +128,7 @@ light.light_bandeau_cuisine:
   lastLight: true
   alias: Bandeau cuisine
   
-light.yeelight_colorc_0x1e3568a8:
+light.yeelight_colorc_:
   linkedClass: light
   linkedArea: chambre
   colorTempRange: [250,370]
@@ -151,7 +151,7 @@ media_player.google_home:
   alias: Enceinte du salon
 
 # MAGIC CUBES ##################################################################
-binary_sensor.cube_158d00027d899f:
+binary_sensor.cube_:
   linkedClass: cube
   linkedLights:
     - light.light_ambilight
@@ -223,10 +223,10 @@ input_select.ambiance_salon:
 ambiance_chambre:
   linkedClass: ambiance
   linkedLights:
-    - light.yeelight_colorc_0x1e36b081
-    - light.yeelight_colorc_0x1e366501
-    - light.yeelight_colorc_0x1e35f3b7
-    - light.yeelight_colorc_0x1e3568a8
+    - light.yeelight_colorc_
+    - light.yeelight_colorc_
+    - light.yeelight_colorc_
+    - light.yeelight_colorc_
   linkedSpeaker: media_player.google_home
   linkedSelect: input_select.ambiance_chambre
   ambianceVolumeLevel: 0.7
@@ -286,10 +286,10 @@ sensor.phone_bluetooth_connection:
 security_entrance:
   linkedClass: security_entrance
   linkedDoors:  
-    - binary_sensor.door_window_sensor_158d00039fe56b
+    - binary_sensor.door_window_sensor_
   linkedWindows:
-    - binary_sensor.door_window_sensor_158d0003d47e37
-    - binary_sensor.door_window_sensor_158d0003e7357e
+    - binary_sensor.door_window_sensor_
+    - binary_sensor.door_window_sensor_
     
 # REMOTE #######################################################################
 input_boolean.vp_power:
