@@ -199,6 +199,12 @@ cloudy_light:
   min: 50
   max: 4000
   unit_of_measurement: 'Lux'
+illuminance_light:
+  name: Luminosité extérieure
+  icon: mdi:theme-light-dark
+  min: 0
+  max: 100000
+  unit_of_measurement: 'Lux'
 ################################################################################
 sun_angle_cover_on:
   name: Angle du soleil ouverture volets

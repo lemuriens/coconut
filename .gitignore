@@ -4,7 +4,7 @@
 
 !entities/
 !entities/*/
-entities/*/**
+entities/*/*
 !entities/*/*_config.yaml
 
 !www/
@@ -17,4 +17,4 @@ node-red/*
 
 !.storage/
 .storage/*
-!.storage/lovelace.dashboard_configuration
+!.storage/lovelace.dashboard_options
