@@ -13,15 +13,6 @@
           "badges": [],
           "cards": [
             {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "type": "markdown",
-                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
-                }
-              ]
-            },
-            {
               "type": "conditional",
               "conditions": [
                 {
@@ -445,6 +436,23 @@
                 }
               ],
               "type": "vertical-stack"
+            }
+          ]
+        },
+        {
+          "theme": "Backend-selected",
+          "title": "Exemple de tuiles",
+          "path": "c",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
+                }
+              ]
             }
           ]
         }
