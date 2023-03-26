@@ -475,6 +475,125 @@
             {
               "cards": [
                 {
+                  "type": "custom:mini-graph-card",
+                  "animate": true,
+                  "height": 150,
+                  "font_size": 80,
+                  "color_thresholds": [
+                    {
+                      "color": "#ff5555",
+                      "value": 26
+                    },
+                    {
+                      "color": "#55ff55",
+                      "value": 22
+                    },
+                    {
+                      "color": "#55ff55",
+                      "value": 20
+                    },
+                    {
+                      "color": "#5555ff",
+                      "value": 18
+                    }
+                  ],
+                  "color_thresholds_transition": "smooth",
+                  "decimals": 1,
+                  "entities": [
+                    {
+                      "entity": "input_number.temp_ext",
+                      "index": 0,
+                      "name": "Extérieure",
+                      "show_state": true
+                    },
+                    {
+                      "color": "#ffaa22",
+                      "entity": "input_number.temp_int_1",
+                      "index": 1,
+                      "name": "Salon",
+                      "show_fill": false,
+                      "show_state": true
+                    },
+                    {
+                      "aggregate_func": "max",
+                      "color": "#666666",
+                      "entity": "input_number.elevation",
+                      "index": 3,
+                      "show_fill": false,
+                      "show_legend": false,
+                      "show_line": true,
+                      "show_state": false,
+                      "y_axis": "secondary"
+                    }
+                  ],
+                  "hours_to_show": 48,
+                  "line_width": 2,
+                  "name": "Températures",
+                  "points_per_hour": 1
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "animate": true,
+                  "height": 100,
+                  "font_size": 80,
+                  "color_thresholds": [
+                    {
+                      "color": "#ff5555",
+                      "value": 70
+                    },
+                    {
+                      "color": "#55ff55",
+                      "value": 60
+                    },
+                    {
+                      "color": "#55ff55",
+                      "value": 40
+                    },
+                    {
+                      "color": "#5555ff",
+                      "value": 30
+                    }
+                  ],
+                  "color_thresholds_transition": "smooth",
+                  "decimals": 1,
+                  "entities": [
+                    {
+                      "entity": "input_number.humidity_ext",
+                      "index": 0,
+                      "name": "Extérieure",
+                      "show_state": true
+                    },
+                    {
+                      "color": "#ffaa22",
+                      "entity": "input_number.humidity_int_1",
+                      "index": 1,
+                      "name": "Salon",
+                      "show_fill": false,
+                      "show_state": true
+                    },
+                    {
+                      "aggregate_func": "max",
+                      "color": "#666666",
+                      "entity": "input_number.elevation",
+                      "index": 3,
+                      "show_fill": false,
+                      "show_legend": false,
+                      "show_line": true,
+                      "show_state": false,
+                      "y_axis": "secondary"
+                    }
+                  ],
+                  "hours_to_show": 48,
+                  "line_width": 2,
+                  "name": "Humidité",
+                  "points_per_hour": 1
+                }
+              ],
+              "type": "vertical-stack"
+            },
+            {
+              "cards": [
+                {
                   "entities": [],
                   "show_header_toggle": false,
                   "title": "Appareils",
