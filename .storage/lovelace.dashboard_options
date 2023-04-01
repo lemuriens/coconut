@@ -613,6 +613,36 @@
                 }
               ],
               "type": "vertical-stack"
+            },
+            {
+              "cards": [
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_heat",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "show_name": true,
+                    "show_icon": true,
+                    "show_state": true,
+                    "type": "glance",
+                    "entities": [
+                      {
+                        "entity": "input_boolean.heat",
+                        "name": "Chauffage automatique"
+                      },
+                      {
+                        "entity": "input_text.heat_temp"
+                      }
+                    ],
+                    "state_color": false
+                  }
+                }
+              ],
+              "type": "vertical-stack"
             }
           ]
         }
