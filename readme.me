@@ -1,14 +1,33 @@
-# INSTALLATION START CONFIG ####################################################
-COPY / PASTE DOMO
-INSTALL DUCKDNS
-FIX IP ADDRESS AND MAKE HTTPS FOR EXTERNAL ACCESS
-INSTALL TERMINAL & SSH
-INSTALL FILE EDITOR
-INSTALL NODE-RED / INSTALL NODE-RED DEPENDENCIES : node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay
-INSTALL HACS
-GIT PULL
-INSTALL THEME / CUSTOM CARDS
+# INSTALLATION #################################################################
+1- COPY / PASTE /ENTITIES TO /CONFIG/ENTITIES
+2- INSTALL TERMINAL ADDON
+3- WITH TERMINAL CONNECT GIT AND DO (git init + git pull https://github.com/lemuriens/combava.git under /config folder)
+4- INSTALL FILE EDITOR ADDON:
+    CONFIG : ___________________________________________________________________
+    dirsfirst: false
+    enforce_basepath: true
+    git: false
+    ignore_pattern:
+      - __pycache__
+      - deps
+      - tts*
+      - zigbee*
+      - SERVICE*
+      - blueprints
+      - custom_components
+      - known_devices.yaml
+      - .*
+      - home-assistant*
+    ssh_keys: []
+    ____________________________________________________________________________
+5- INSTALL NODE-RED ADDON (credential_secret*="CHOOSE_YOURS",ssl=false), INSTALL DEPENDENCIES UNDER NODE-RED: node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay, node-red-contrib-gc-trigger
+6- INSTALL HACS ADDON (need GITHUB ACCOUNT), INSTALL LOVELACE ADDONS (HTML Jinja2 Template card / mini-graph-card / Dark Theme Pack for Home Assistant)
+7- INSTALL GITHUB ADDON (Star github.com/lemuriens/combava.git ON YOUR ACCOUNT)
+8- RESTART HA
+9- INSTALL DUCKDNS ADDON THEN, FIX IP ADDRESS FOR LOCAL HA AND MAKE HTTPS FOR EXTERNAL ACCESS
+10- GIT PULL
 
+EXEMPLE OF HA_CONFIGURATION.yaml under ENTITIES : ______________________________
 # ZONE #########################################################################
 zone.home:
   # metres
