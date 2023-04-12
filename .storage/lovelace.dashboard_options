@@ -670,6 +670,15 @@
                 "yellow": 70,
                 "red": 90
               }
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.swap_use_percent",
+              "severity": {
+                "green": 0,
+                "yellow": 70,
+                "red": 90
+              }
             }
           ]
         }
