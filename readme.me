@@ -16,8 +16,9 @@
       - blueprints
       - custom_components
       - known_devices.yaml
-      - .*
       - home-assistant*
+      - .*
+      - node-red
     ssh_keys: []
     ____________________________________________________________________________
 5- INSTALL NODE-RED ADDON (credential_secret*="CHOOSE_YOURS",ssl=false), INSTALL DEPENDENCIES UNDER NODE-RED: node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay, node-red-contrib-gc-trigger
@@ -27,7 +28,7 @@
 9- INSTALL DUCKDNS ADDON THEN, FIX IP ADDRESS FOR LOCAL HA AND MAKE HTTPS FOR EXTERNAL ACCESS
 10- GIT PULL
 
-EXEMPLE OF HA_CONFIGURATION.yaml under ENTITIES : ______________________________
+EXEMPLE OF HA_CONFIGURATION.yaml under /ENTITIES : ______________________________
 # ZONE #########################################################################
 zone.home:
   # metres
