@@ -21,3 +21,5 @@ node-red/*
 !.storage/lovelace.dashboard_options
 
 !themes/
+!themes/*/
+themes/*/*
