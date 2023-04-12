@@ -1,8 +1,4 @@
 # Example configuration.yaml entry with all entry types (delete/comment out as necessary)
 - platform: systemmonitor
   resources:
-    - type: disk_use_percent
-      arg: /config
-    - type: memory_free
-    - type: swap_use_percent
-    - type: processor_use
+    - type: memory_use_percent

@@ -645,42 +645,6 @@
               "type": "vertical-stack"
             }
           ]
-        },
-        {
-          "title": "Système",
-          "path": "systeme",
-          "badges": [],
-          "cards": [
-            {
-              "type": "gauge",
-              "entity": "sensor.disk_use_percent_config",
-              "name": "Disk use (percent)",
-              "severity": {
-                "green": 0,
-                "yellow": 70,
-                "red": 90
-              }
-            },
-            {
-              "type": "gauge",
-              "entity": "sensor.memory_use_percent",
-              "needle": false,
-              "severity": {
-                "green": 0,
-                "yellow": 70,
-                "red": 90
-              }
-            },
-            {
-              "type": "gauge",
-              "entity": "sensor.swap_use_percent",
-              "severity": {
-                "green": 0,
-                "yellow": 70,
-                "red": 90
-              }
-            }
-          ]
         }
       ]
     }
