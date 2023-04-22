@@ -341,6 +341,7 @@ control_device:
     - if: sensor.prise_cuisine_power.state == 0 AND global.motionArea.cuisine == off
       then: 
         - [[switch.prise_cuisine,off]]
+        - [wait 60,switch.prise_pc.state != unavailable,[[switch.prise_pc,on]]]
     - if: sensor.prise_chambre_power.state == 0 AND global.motionArea.chambre == off
       then: 
         - [[switch.prise_chambre,off]]
