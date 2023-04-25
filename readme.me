@@ -338,24 +338,24 @@ input_number.hc_vol:
 # CONTROL DEVICES ON/OFF #######################################################
 control_device:
   time:
-    - if: sensor.prise_cuisine_power.state == 0 AND global.motionArea.cuisine == off
+    - if: sensor.prise_cuisine_power == 0 AND global.motionArea.cuisine == off
       then: 
         - [[switch.prise_cuisine,off]]
-        - [wait 60,switch.prise_pc.state != unavailable,[[switch.prise_pc,on]]]
-    - if: sensor.prise_chambre_power.state == 0 AND global.motionArea.chambre == off
+        - [wait 60,switch.prise_pc != unavailable,[[switch.prise_pc,on]]]
+    - if: sensor.prise_chambre_power == 0 AND global.motionArea.chambre == off
       then: 
         - [[switch.prise_chambre,off]]
-    - if: sensor.prise_bureau_power.state <= 5 AND global.motionArea.bureau == off
+    - if: sensor.prise_bureau_power <= 5 AND global.motionArea.bureau == off
       then:
         - [[switch.prise_bureau,off]]
        
   input_boolean.in_home_zone:
-    - if: input_boolean.in_home_zone.state == off
+    - if: input_boolean.in_home_zone == off
       then: 
         - [[input_boolean.hc_power,off,5],[input_boolean.ec_power,off],[input_boolean.vp_power,off],[switch.prise_meuble_tv,off],[switch.prise_cuisine,off],[switch.prise_chambre,off]]
 
   input_boolean.in_middle_zone:
-    - if: input_boolean.in_middle_zone.state == on
+    - if: input_boolean.in_middle_zone == on
       then: 
         - [[switch.prise_meuble_tv,on]]
         
@@ -363,3 +363,17 @@ control_device:
     - if: global.motionArea.cuisine == on 
       then: 
        - [[switch.prise_cuisine,on]]
+       
+  media_player.someone:
+    - if: input_boolean.in_home_zone == on AND media_player.someone == playing AND media_player.someone.attributes.source == Wawa
+      then:
+        - [[switch.prise_bureau,on]]
+        - [wait 60,switch.prise_home_cinema != unavailable,[[input_boolean.hc_power,on]]]
+        - [wait 60,input_boolean.hc_power == on AND remote.remote_remote == on,[[input_boolean.hc_bluetooth,on]]]
+    - if: input_boolean.in_home_zone == on AND media_player.someone == playing AND media_player.someone.attributes.source == VANILLA AND input_boolean.headset == off
+      then:
+        - [wait 60,switch.prise_home_cinema != unavailable,[[input_boolean.hc_power,on]]]
+        - [wait 60,input_boolean.hc_power == on AND remote.remote_remote == on,[[input_boolean.hc_hdmi,on]]]
+    - if: input_boolean.in_home_zone == on AND media_player.someone == idle AND input_boolean.hc_bluetooth == on
+      then:
+        - [[input_boolean.hc_power,off]]
