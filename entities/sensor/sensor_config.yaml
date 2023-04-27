@@ -1,4 +1,0 @@
-# Example configuration.yaml entry with all entry types (delete/comment out as necessary)
-- platform: systemmonitor
-  resources:
-    - type: memory_use_percent
