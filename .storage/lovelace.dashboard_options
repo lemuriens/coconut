@@ -195,7 +195,7 @@
                         "tap_action": {
                           "action": "toggle"
                         },
-                        "entity": "input_boolean.module_temperature",
+                        "entity": "input_boolean.module_temp_hum",
                         "show_state": true,
                         "icon_height": "40px"
                       }
@@ -258,7 +258,7 @@
                   "entities": [
                     {
                       "entity": "input_boolean.invitation",
-                      "icon": "mdi:account-plus"
+                      "icon": "mdi:thermometer-lines"
                     },
                     {
                       "entity": "input_boolean.reveil"
@@ -322,7 +322,7 @@
                   "type": "conditional",
                   "conditions": [
                     {
-                      "entity": "input_boolean.module_temperature",
+                      "entity": "input_boolean.module_temp_hum",
                       "state": "on"
                     }
                   ],
@@ -480,7 +480,7 @@
                 {
                   "type": "custom:mini-graph-card",
                   "animate": true,
-                  "height": 150,
+                  "height": 100,
                   "font_size": 80,
                   "color_thresholds": [
                     {
@@ -505,34 +505,31 @@
                   "entities": [
                     {
                       "entity": "input_number.temp_ext",
-                      "index": 0,
                       "name": "Extérieure",
                       "show_state": true
                     },
                     {
-                      "color": "#ffaa22",
                       "entity": "input_number.temp_int_1",
-                      "index": 1,
+                      "color": "#ffaa22",
                       "name": "Salon",
                       "show_fill": false,
                       "show_state": true
                     },
                     {
-                      "aggregate_func": "max",
-                      "color": "#666666",
                       "entity": "input_number.elevation",
-                      "index": 3,
-                      "show_fill": false,
+                      "aggregate_func": "max",
+                      "color": "#777777",
+                      "show_line": false,
+                      "show_points": false,
                       "show_legend": false,
-                      "show_line": true,
-                      "show_state": false,
                       "y_axis": "secondary"
                     }
                   ],
                   "hours_to_show": 48,
                   "line_width": 2,
                   "name": "Températures",
-                  "points_per_hour": 1
+                  "points_per_hour": 1,
+                  "align_state": "center"
                 },
                 {
                   "type": "custom:mini-graph-card",
@@ -562,34 +559,31 @@
                   "entities": [
                     {
                       "entity": "input_number.humidity_ext",
-                      "index": 0,
                       "name": "Extérieure",
                       "show_state": true
                     },
                     {
-                      "color": "#ffaa22",
                       "entity": "input_number.humidity_int_1",
-                      "index": 1,
+                      "color": "#ffaa22",
                       "name": "Salon",
                       "show_fill": false,
                       "show_state": true
                     },
                     {
-                      "aggregate_func": "max",
-                      "color": "#666666",
                       "entity": "input_number.elevation",
-                      "index": 3,
-                      "show_fill": false,
+                      "aggregate_func": "max",
+                      "color": "#777777",
+                      "show_line": false,
+                      "show_points": false,
                       "show_legend": false,
-                      "show_line": true,
-                      "show_state": false,
                       "y_axis": "secondary"
                     }
                   ],
                   "hours_to_show": 48,
                   "line_width": 2,
                   "name": "Humidité",
-                  "points_per_hour": 1
+                  "points_per_hour": 1,
+                  "align_state": "center"
                 }
               ],
               "type": "vertical-stack"

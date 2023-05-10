@@ -22,9 +22,9 @@ module_cover:
 module_healty:
   icon: mdi:bottle-tonic-plus
   name: Sport et santé
-module_temperature:
-  icon: mdi:home-thermometer-outline
-  name: Température Humidité Ventilation
+module_temp_hum:
+  icon: mdi:thermometer
+  name: Alerte température et humidité
 ################################################################################
 in_home_zone:
   icon: mdi:exit-run
