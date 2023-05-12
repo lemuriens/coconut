@@ -258,7 +258,7 @@
                   "entities": [
                     {
                       "entity": "input_boolean.invitation",
-                      "icon": "mdi:thermometer-lines"
+                      "icon": "mdi:account-plus"
                     },
                     {
                       "entity": "input_boolean.reveil"
@@ -335,16 +335,32 @@
                           "input_boolean.alert_light",
                           "input_boolean.alert_speaker"
                         ],
-                        "title": "Alertes",
+                        "title": "Alertes vocales et lumineuses",
                         "show_header_toggle": false
                       },
                       {
                         "type": "entities",
                         "entities": [
-                          "input_number.temp_max",
-                          "input_number.temp_min"
+                          {
+                            "entity": "input_number.rosee_sensibility",
+                            "icon": "mdi:home-percent-outline"
+                          },
+                          {
+                            "entity": "input_number.temp_max",
+                            "icon": "mdi:thermometer"
+                          },
+                          {
+                            "entity": "input_number.temp_min",
+                            "icon": "mdi:thermometer"
+                          },
+                          {
+                            "entity": "input_number.humidity_max"
+                          },
+                          {
+                            "entity": "input_number.humidity_min"
+                          }
                         ],
-                        "title": "Alertes température",
+                        "title": "Alertes température et humidité",
                         "show_header_toggle": false
                       },
                       {
