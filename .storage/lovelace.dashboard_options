@@ -271,7 +271,7 @@
                       "entity": "input_number.low_batteries"
                     }
                   ],
-                  "title": "Alerte batterie des capteurs faible",
+                  "title": "Alerte capteurs batterie faible",
                   "type": "entities"
                 }
               ]
@@ -358,15 +358,6 @@
                           }
                         ],
                         "title": "Alertes température et humidité",
-                        "show_header_toggle": false
-                      },
-                      {
-                        "type": "entities",
-                        "entities": [
-                          "input_number.humidity_max",
-                          "input_number.humidity_min"
-                        ],
-                        "title": "Alertes humidité",
                         "show_header_toggle": false
                       }
                     ]
