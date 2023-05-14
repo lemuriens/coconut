@@ -1,10 +1,6 @@
 ################################################################################
 user_configuration:
 control_device:
-reload_ha_configuration:
-  name: Recharger la configuration
-  icon: mdi:reload
-ha_ready:
 ################################################################################
 modules_activation:
   icon: mdi:toogle-switch

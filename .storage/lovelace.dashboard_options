@@ -109,9 +109,6 @@
                   "type": "entities",
                   "entities": [
                     {
-                      "entity": "input_boolean.reload_ha_configuration"
-                    },
-                    {
                       "entity": "input_boolean.modules_activation",
                       "name": "Sélection des modules"
                     }
