@@ -28,352 +28,394 @@
 9- INSTALL DUCKDNS ADDON THEN, FIX IP ADDRESS FOR LOCAL HA AND MAKE HTTPS FOR EXTERNAL ACCESS
 10- GIT PULL
 
-EXEMPLE OF HA_CONFIGURATION.yaml under /ENTITIES : ______________________________
+EXEMPLE OF HOW TO CONFIGURE /config/entities/customize/customize_user.yaml : ___
+# CONFIGURATION ################################################################
+input_select.user_configuration:
+    config:
+        linkedClass: config
+        mode: dev
+        # CONVECTORS ###########################################################
+        convector_config:
+            input_boolean.in_home_zone: Auto
+            input_boolean.in_middle_zone: 17
+            input_boolean.in_big_zone: 12
+        # AMBIANCES ############################################################
+        ambiance_config:
+            path: 
+                start: https://storage.googleapis.com/relaxation-sounds/
+                end: _3600.mp3
+        # color: [hs,saturation,brightness]
+        # variance: [0-360,0-100,0-100]
+            ambiances_type:
+                stop:
+                    name: Arrêt
+                forest:
+                    name: Forêt
+                    color: [83,80,80]
+                    variance: [10,20,20]
+                river:
+                    name: Rivière
+                    color: [164,80,80]
+                    variance: [10,20,20]
+                rain:
+                    name: Pluie
+                    color: [210,50,80]
+                    variance: [10,10,20]
+                country_night:
+                    name: Nuit
+                    color: [240,90,90]
+                    variance: [20,10,10]
+                thunderstorm:
+                    name: Orage
+                    color: [240,100,80]
+                    variance: [10,0,20]
+                fireplace:
+                    name: Au coin du feu
+                    color: [30,70,90]
+                    variance: [10,30,10]
+                ocean:
+                    name: Océan
+                    color: [180,90,80]
+                    variance: [20,10,20]
+                    
+        ambiance_salon:
+            linkedClass: ambiance
+            linkedLights:
+                - light.light_ambilight
+                - light.light_deco
+                - light.light_bureau
+                - light.light_salon
+            linkedSpeaker: media_player.google_home
+            linkedSelect: input_select.ambiance_salon
+            ambianceVolumeLevel: 0.5
+            radioVolumeLevel : 0.5
+            alias: ambiance du salon
+        
+        ambiance_chambre:
+            linkedClass: ambiance
+            linkedLights:
+                - light.yeelight_colorc_0x1e
+                - light.yeelight_colorc_0x1e
+                - light.yeelight_colorc_0x1e
+                - light.yeelight_colorc_0x1e
+            linkedSpeaker: media_player.google_home
+            linkedSelect: input_select.ambiance_chambre
+            ambianceVolumeLevel: 0.7
+            radioVolumeLevel : 0.6
+            alias: ambiance de la chambre
+            
 # ZONE #########################################################################
 zone.home:
-  # metres
-  input_boolean.in_home_zone: 50
-  input_boolean.in_middle_zone: 1000
-  input_boolean.in_big_zone: 70000
+    config:
+    # metres
+        input_boolean.in_home_zone: 50
+        input_boolean.in_middle_zone: 1000
+        input_boolean.in_big_zone: 70000
   
 # ILLUMINANCE ##################################################################
-sensor.lumiere_ext_illuminance_lux:
-  linkedClass: illuminance
-  linkedArea: exterior
-  alias: Luminosité exterieure
+sensor.ext_ill_illuminance_lux:
+    config:
+        linkedClass: illuminance
+        linkedArea: exterior
+        linkedEntity: input_number.illuminance_light
+        alias: Luminosité exterieure
 
-# EXTERIOR TEMPERATURES | input_number.temp_ext ################################
-sensor.ble_temperature_:
-  linkedClass: ext_temp
-  linkedArea: exterior
-  linkedEntity: input_number.temp_ext
-  alias: exterieure
+# TEMPERATURES #################################################################
+# EXTERIOR TEMPERATURES | input_number.temp_ext
+sensor.ble_temperature_a4c138efbeff:
+    config:
+        linkedClass: ext_temp
+        linkedArea: exterior
+        linkedEntity: input_number.temp_ext
+        alias: exterieure
   
-# INTERIOR TEMPERATURES | input_number.temp_int_[1 to 10] ######################
-sensor.ble_temperature_:
-  linkedClass: int_temp
-  linkedEntity: input_number.temp_int_1
-  linkedArea: salon
-  alias: de la maison
+# INTERIOR TEMPERATURES | input_number.temp_int_[1 to 10]
+sensor.ble_temperature_582d34362a4d:
+    config:
+        linkedClass: int_temp
+        linkedEntity: input_number.temp_int_1
+        linkedArea: salon
+        alias: de la maison
   
-# EXTERIOR HUMIDITIES | input_number.humidity_ext ##############################
-sensor.ble_humidity_:
-  linkedClass: ext_humidity
-  linkedEntity: input_number.humidity_ext
-  linkedArea: exterior
-  alias: exterieure
-  
-# INTERIOR HUMIDITIES | input_number.humidity_int_[1 to 10] ####################
-sensor.ble_humidity_:
-  linkedClass: int_humidity
-  linkedEntity: input_number.humidity_int_1
-  linkedArea: salon
-  alias: de la maison
-  
+# EXTERIOR HUMIDITIES | input_number.humidity_ext 
+sensor.ble_humidity_a4c138efbeff:
+    config:
+        linkedClass: ext_humidity
+        linkedEntity: input_number.humidity_ext
+        linkedArea: exterior
+        alias: exterieure
+
+# INTERIOR HUMIDITIES | input_number.humidity_int_[1 to 10]
+sensor.ble_humidity_582d34362a4d:
+    config:
+        linkedClass: int_humidity
+        linkedEntity: input_number.humidity_int_1
+        linkedArea: salon
+        alias: de la maison
+        
 # CONVECTORS ####################################################################
-convector_config:
-  input_boolean.in_home_zone: Auto
-  input_boolean.in_middle_zone: 16.5
-  input_boolean.in_big_zone: 12
-
-switch.chauffage_salon:
-  linkedClass: convector
-  linkedArea: salon
-  schedule: 
-    - "00:00": [16.5,false]
-    - "08:00": [17,false]
-    - "09:20": [18,true]
-    - "18:00": [18.5,false]
-    - "23:00": [16.5,false]
-  alias: chauffage du salon
-  
+switch.switch_chauffage_salon:
+    config:
+        linkedClass: convector
+        linkedArea: salon
+        schedule: 
+            - "00:00": [16.5,false]
+            - "08:00": [17,false]
+            - "09:20": [18,true]
+            - "18:00": [18.5,false]
+            - "23:00": [16.5,false]
+        alias: chauffage du salon
+    
 # WATER HEAT ###################################################################
 switch.switch_chauffe_eau:
-  linkedClass: water_heat
-  onTime: ["01:24","12:24"]
-  offTime: ["07:24","14:24"]
+    config:
+      linkedClass: water_heat
+      onTime: ["01:24","12:24"]
+      offTime: ["07:24","14:24"]
   
 # VENTILATION ##################################################################
 switch.switch_vmc:
-  linkedClass: ventilation
-  linkedArea: salon
-  onTime: ["05:24","12:24"]
-  offTime: ["07:24","14:24"]
-  alias: du salon
-  
-# WINDOWS ######################################################################
-binary_sensor.door_window_sensor_:
-  linkedClass: window
-  linkedArea: salon
-  alias: du bureau
+    config:
+        linkedClass: ventilation
+        linkedArea: salon
+        onTime: ["05:24","12:24"]
+        offTime: ["07:24","14:24"]
+        alias: du salon
 
-# STORES #######################################################################
-input_number.store_salon:
-  linkedDevice: test
-  linkedClass: store
-  linkedArea: salon
-  timeToAeration: 2
-  timeToOpen: 10
-  timeToClose: 8
-  alias: du salon
+# WINDOWS ######################################################################
+binary_sensor.door_window_sensor_158d0003:
+    config:
+        linkedClass: window
+        linkedArea: salon
+        security_entrance: true
+        alias: du bureau
+
 # COVERS #######################################################################
 input_number.cover_salon:
-  linkedDevice: test
-  linkedClass: cover
-  linkedArea: salon
-  timeToAeration: 2
-  timeToOpen: 10
-  timeToClose: 8
-  alias: du salon
-  
+    config:
+        linkedDevice: test
+        linkedClass: cover
+        linkedArea: salon
+        timeToAeration: 2
+        timeToOpen: 10
+        timeToClose: 8
+        alias: du salon
+    
 # MOTIONS ######################################################################
-binary_sensor.motion_sensor_:
-  linkedClass: motion
-  linkedArea: salon
-  addNoMotionDelay: 0
-  invertedMotion: false
-  lastMotion: true
-  alias: détecteur de l'entrée
+binary_sensor.motion_sensor_158d000:
+    config:
+        linkedClass: motion  
+        linkedArea: salon
+        addNoMotionDelay: 0
+        invertedMotion: false
+        lastMotion: true
+        alias: détecteur de l'entrée
+  
+binary_sensor.door_window_sensor_158d00039fe56b:
+    config:
+        linkedClass: motion  
+        linkedArea: salon
+        addNoMotionDelay: 120
+        invertedMotion: false
+        lastMotion: true
+        security_entrance: true
+        alias: porte de l'entrée
   
 # LIGHTS #######################################################################
+light.light_ambilight:
+    config:
+        linkedClass: light
+        linkedArea: salon
+        colorTempRange: [220,370]
+        transitionRange: [10,30]
+        brightRange: [20,100]
+        hsSaturation: 100
+        color: "on"
+        dayLight: false
+        nightLight: true
+        lastLight: true
+        alias: lumière ambilight
+  
 switch.switch_douche:
-  linkedClass: light
-  linkedArea: douche
-  dayLight: true
-  nightLight: true
-  lastLight: true
-  alias: lumière douche
+    config:
+        linkedClass: light
+        linkedArea: douche
+        dayLight: true
+        nightLight: true
+        lastLight: true
+        alias: lumière douche
   
-light.light_bandeau_cuisine:
-  linkedClass: light
-  linkedArea: cuisine
-  colorTempRange: [250,370]
-  transitionRange: [1,1]
-  brightRange: [1,100]
-  hsSaturation: 100
-  color: "off"
-  dayLight: false
-  nightLight: true
-  lastLight: true
-  alias: Bandeau cuisine
-  
-light.yeelight_colorc_:
-  linkedClass: light
-  linkedArea: chambre
-  colorTempRange: [250,370]
-  transitionRange: [7,20]
-  brightRange: [1,100]
-  hsSaturation: 100
-  color: "both"
-  dayLight: true
-  nightLight: true
-  lastLight: false
-  alias: chambre spot 1
+light.lumary_rgb_tunable_white_led_strip:
+    config:
+        linkedClass: light
+        linkedArea: cuisine
+        colorTempRange: [220,370]
+        transitionRange: [1,1]
+        brightRange: [1,100]
+        hsSaturation: 100
+        color: "off"
+        dayLight: false
+        nightLight: true
+        lastLight: true
+        alias: Bandeau cuisine
+
+light.light_bureau:
+    config:
+        linkedClass: light
+        linkedArea: bureau
+        colorTempRange: [220,370]
+        transitionRange: [2,20]
+        brightRange: [1,100]
+        hsSaturation: 100
+        color: "both"
+        dayLight: false
+        nightLight: true
+        lastLight: true
+        alias: lumière bureau
   
 # SPEAKERS #####################################################################
 media_player.google_home:
-  linkedClass: speaker
-  linkedDefault: true
-  linkedArea: salon
-  defaultVolumeLevel: 0.4
-  #volumeLevel: 0.6
-  alias: Enceinte du salon
+    config:
+        linkedClass: speaker
+        linkedDefault: true
+        linkedArea: salon
+        defaultVolumeLevel: 0.5
+        alias: Enceinte du salon
 
 # MAGIC CUBES ##################################################################
-binary_sensor.cube_:
-  linkedClass: cube
-  linkedLights:
-    - light.light_ambilight
-    - light.light_deco
-    - light.light_bureau
-    - light.light_salon
-  linkedSpeaker: media_player.google_home
-  linkedAmbiance: ambiance_salon
-  linkedSelectAmbiance: input_select.ambiance_salon
-  alias: cube magique du salon
-
+binary_sensor.cube_158d00027d899f:
+    config:
+        linkedClass: cube
+        linkedLights:
+            - light.light_ambilight
+            - light.light_deco
+            - light.light_bureau
+            - light.light_salon
+        linkedSpeaker: media_player.google_home
+        linkedAmbiance: ambiance_salon
+        linkedSelectAmbiance: input_select.ambiance_salon
+        alias: cube magique du salon
+    
 # AMBIANCES ####################################################################
-ambiance_config:
-  path: 
-    start: https://storage.googleapis.com/relaxation-sounds/
-    end: _3600.mp3
-# color: [hs,saturation,brightness]
-# variance: [0-360,0-100,0-100]
-  ambiances_type:
-      stop:
-        name: Arrêt
-      forest:
-        name: Forêt
-        color: [83,70,80]
-        variance: [10,30,20]
-      river:
-        name: Rivière
-        color: [164,70,80]
-        variance: [10,30,20]
-      rain:
-        name: Pluie
-        color: [210,10,80]
-        variance: [10,10,20]
-      country_night:
-        name: Nuit
-        color: [240,90,90]
-        variance: [20,10,10]
-      thunderstorm:
-        name: Orage
-        color: [240,100,90]
-        variance: [10,0,10]
-      fireplace:
-        name: Au coin du feu
-        color: [30,60,90]
-        variance: [10,30,10]
-      ocean:
-        name: Océan
-        color: [180,100,80]
-        variance: [20,10,20]
-  
-ambiance_salon:
-  linkedClass: ambiance
-  linkedLights:
-    - light.light_ambilight
-    - light.light_deco
-    - light.light_bureau
-    - light.light_salon
-  linkedSpeaker: media_player.google_home
-  linkedSelect: input_select.ambiance_salon
-  ambianceVolumeLevel: 0.5
-  radioVolumeLevel : 0.5
-  alias: ambiance du salon
-  
 input_select.ambiance_salon:
-  linkedClass: ambiance_select
-  linkedAmbiance: ambiance_salon
-  alias: liste de selection de l'ambiance du salon
-
-ambiance_chambre:
-  linkedClass: ambiance
-  linkedLights:
-    - light.yeelight_colorc_
-    - light.yeelight_colorc_
-    - light.yeelight_colorc_
-    - light.yeelight_colorc_
-  linkedSpeaker: media_player.google_home
-  linkedSelect: input_select.ambiance_chambre
-  ambianceVolumeLevel: 0.7
-  radioVolumeLevel : 0.6
-  alias: ambiance de la chambre
+    config:
+        linkedArea: salon
+        linkedClass: ambiance_select
+        linkedAmbiance: ambiance_salon
+        alias: liste de selection de l'ambiance du salon
   
 input_select.ambiance_chambre:
-  linkedClass: ambiance_select
-  linkedAmbiance: ambiance_chambre
-  alias: liste de selection de l'ambiance de la chambre
-  
+    config:
+        linkedArea: chambre
+        linkedClass: ambiance_select
+        linkedAmbiance: ambiance_chambre
+        alias: liste de selection de l'ambiance de la chambre
+    
+
 # PERSONS ######################################################################
-# EDWARD _______________________________________________________________________
-person.:
-  linkedClass: person
-  linkedArea: chambre
-  linkedAmbiance: ambiance_chambre
-  linkedRadio: http://direct.
-  linkedSpeaker: media_player.google_home
-  ambianceDuration: 20
-  mobileNotifications: mobile_app_phone
-  name: E
+# JHON ________________________________________________________________________
+person.jhon:
+    config:
+        linkedClass: person
+        linkedArea: chambre
+        alarmClock:
+            linkedAmbiance: ambiance_chambre
+            linkedSpeaker: media_player.google_home
+            linkedAmbianceDurationMinutes: 20
+            linkedRadio: http://direct.
+            linkedCovers: [input_number.cover_salon]
+        mobileNotifications: mobile_app_phone
+        name: Jhon
   
 sensor.phone_next_alarm:
 # IN APP ACTIVATE : NEXT ALARM
-  linkedClass: phone_alarm
-  linkedPerson: person.
-  package: com.google.android.deskclock
+    config:
+        linkedClass: phone_alarm
+        linkedPerson: person.jhon
+        package: com.google.android.deskclock
   
 device_tracker.phone:
 # IN APP ACTIVATE : BACKGROUND LOCALISATION (HIGH PRECISION)/ LOCALISATION ZONE
-  linkedClass: phone_position
-  linkedPerson: person.
+    config:
+        linkedClass: phone_position
+        linkedPerson: person.jhon
   
 sensor.phone_phone_state:
 # IN APP ACTIVATE : PHONE STATE
-  linkedClass: phone_state
-  linkedPerson: person.
+    config:
+        linkedClass: phone_state
+        linkedPerson: person.jhon
   
 sensor.phone_wifi_connection:
 # IN APP ACTIVATE : WIFI CONNECTION
-  linkedClass: phone_wifi
-  linkedPerson: person.
-  
+    config:
+        linkedClass: phone_wifi
+        linkedPerson: person.jhon
+
 sensor.phone_bluetooth_connection:
 # IN APP ACTIVATE : BLUETOOTH CONNECTION
-  linkedClass: phone_bluetooth
-  linkedPerson: person.
-  
-# media_player.spotify_:
-#   linkedClass: spotify  
-#   linkedPerson: E
+    config:
+        linkedClass: phone_bluetooth
+        linkedPerson: person.jhon
 
-# ______________________________________________________________________________
-
-# SECURITY ENTRANCE ############################################################
-security_entrance:
-  linkedClass: security_entrance
-  linkedDoors:  
-    - binary_sensor.door_window_sensor_
-  linkedWindows:
-    - binary_sensor.door_window_sensor_
-    - binary_sensor.door_window_sensor_
-    
 # REMOTE #######################################################################
 input_boolean.vp_power:
-  linkedClass: remote
-  linkedDevice: remote.remote_remote
-  remote:
-    on: 1, b64:JgCgAJiPFC4UDBUMFQwVLBUMFQwVDBUtFA0TDRQuFA0UDRMOEw0UkBQNEw4TDRQNFC4TDhMNFC4ULhMNFA0ULhMOEy4ULhMOEw4TLhQuEw4TAAdbl5ATLhQNFA0UDRMuFA0UDRQNEy4UDRQNFC4TDhMNFA0UDRSPFA0UDRQNFA0TLhQNFA0ULhMuFA0UDRQuEw0ULhQuEw0UDRQuEy4UDRQADQUAAAAAAAAAAA==
-    off: 2, b64:JgCgAJaQEjAREBEPEg8SMBEQEQ8TDhIwERATDRIvEw8REBEQEQ8SkhEQERARDxIPEg8REBEQETASMBEQERASLxIwETASMBEQERARMBIwERARAAddl5ARMBIPEg8SDxEwEg8SDxIPETASDxIPEjAREBEPEg8SDxKSEQ8SDxIPEg8REBEQEQ8SMBExEQ8SDxIwETASMBIwERARDxIwETASDxIADQUAAAAAAAAAAA==
-    
-input_number.hc_vol:
-  linkedClass: remote
-  linkedDevice: remote.remote_remote
-  remote:
-    increase: b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYADQUAAAAAAAAAAAAA
-    decrease: b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2FAANBQAAAAAAAAAA
-    
-# CONTROL DEVICES ON/OFF #######################################################
-control_device:
-  time:
-    - if: sensor.prise_cuisine_power == 0 AND global.motionArea.cuisine == off
-      then: 
-        - [[switch.prise_cuisine,off]]
-        - [wait 60,switch.prise_pc != unavailable,[[switch.prise_pc,on]]]
-    - if: sensor.prise_chambre_power == 0 AND global.motionArea.chambre == off
-      then: 
-        - [[switch.prise_chambre,off]]
-    - if: sensor.prise_bureau_power <= 5 AND global.motionArea.bureau == off
-      then:
-        - [[switch.prise_bureau,off]]
-       
-  input_boolean.in_home_zone:
-    - if: input_boolean.in_home_zone == off
-      then: 
-        - [[input_boolean.hc_power,off,5],[input_boolean.ec_power,off],[input_boolean.vp_power,off],[switch.prise_meuble_tv,off],[switch.prise_cuisine,off],[switch.prise_chambre,off]]
-
-  input_boolean.in_middle_zone:
-    - if: input_boolean.in_middle_zone == on
-      then: 
-        - [[switch.prise_meuble_tv,on]]
+    config:
+        linkedClass: remote
+        linkedDevice: remote.remote_remote
+        remote:
+            on: 1, b64:JgCgAJiPFC4UDBUMFQwVLBUMFQwVDBUtFA0TDRQuFA0UDRMOEw0UkBQNEw4TDRQNFC4TDhMNFC4ULhMNFA0ULhMOEy4ULhMOEw4TLhQuEw4TAAdbl5ATLhQNFA0UDRMuFA0UDRQNEy4UDRQNFC4TDhMNFA0UDRSPFA0UDRQNFA0TLhQNFA0ULhMuFA0UDRQuEw0ULhQuEw0UDRQuEy4UDRQADQUAAAAAAAAAAA==
+            off: 2, b64:JgCgAJaQEjAREBEPEg8SMBEQEQ8TDhIwERATDRIvEw8REBEQEQ8SkhEQERARDxIPEg8REBEQETASMBEQERASLxIwETASMBEQERARMBIwERARAAddl5ARMBIPEg8SDxEwEg8SDxIPETASDxIPEjAREBEPEg8SDxKSEQ8SDxIPEg8REBEQEQ8SMBExEQ8SDxIwETASMBIwERARDxIwETASDxIADQUAAAAAAAAAAA==
         
-  linkedClass_motion_cuisine:  
-    - if: global.motionArea.cuisine == on 
-      then: 
-       - [[switch.prise_cuisine,on]]
-       
-  media_player.someone:
-    - if: input_boolean.in_home_zone == on AND media_player.someone == playing AND media_player.someone.attributes.source == Wawa
-      then:
-        - [[switch.prise_bureau,on]]
-        - [wait 60,switch.prise_home_cinema != unavailable,[[input_boolean.hc_power,on]]]
-        - [wait 60,input_boolean.hc_power == on AND remote.remote_remote == on,[[input_boolean.hc_bluetooth,on]]]
-    - if: input_boolean.in_home_zone == on AND media_player.someone == playing AND media_player.someone.attributes.source == VANILLA AND input_boolean.headset == off
-      then:
-        - [wait 60,switch.prise_home_cinema != unavailable,[[input_boolean.hc_power,on]]]
-        - [wait 60,input_boolean.hc_power == on AND remote.remote_remote == on,[[input_boolean.hc_hdmi,on]]]
-    - if: input_boolean.in_home_zone == on AND media_player.someone == idle AND input_boolean.hc_bluetooth == on
-      then:
-        - [[input_boolean.hc_power,off]]
+input_boolean.hc_hdmi:
+    config:
+        linkedClass: remote
+        linkedDevice: remote.remote_remote
+        remote: 
+            on: 1, b64:JgBIAAABKZIUERQ2FBEUEBU1FBEUNRQ2FDUVEBQ2FDYUEBQ2FDYUEBQ1FREUNRQzFxEUERQQFBEUERQ2FBAUERQ2FDUUNhQ2FAANBQ==
+            off: 0,''
+        
+input_number.hc_vol:
+    config:
+        linkedClass: remote
+        linkedDevice: remote.remote_remote
+        remote:
+            increase: b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYADQUAAAAAAAAAAAAA
+            decrease: b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2FAANBQAAAAAAAAAA
+        
+# CONTROL DEVICES ON/OFF #######################################################
+input_boolean.control_device:
+    config:
+        time:
+            - if: sensor.prise_cuisine_power <= 5 AND global.area_motions.cuisine == off
+              then: 
+                - [[switch.prise_cuisine,off]]
+           
+        input_boolean.in_home_zone:
+            - if: input_boolean.in_home_zone == off
+              then: 
+                - [[input_boolean.hc_power,off],[input_boolean.ec_power,off],[input_boolean.vp_power,off],[switch.prise_meuble_tv,off],[switch.prise_cuisine,off],[switch.prise_chambre,off],[input_boolean.mode_canape,off]]
+            - if: input_boolean.in_home_zone == on AND input_boolean.invitation == off
+              then:         
+                - [[input_boolean.reveil,on]]
+        
+        linkedClass_motion_chambre:  
+            - if: global.area_motions.chambre == on
+              then: 
+                - [[switch.prise_chambre,on]]
+            
+        linkedClass_motion_bureau:  
+            - if: global.area_motions.bureau == on
+              then: 
+                - [[switch.prise_bureau,on]]
+            
+        input_boolean.pc_power:
+            - if: input_boolean.pc_power == on
+              then:
+                - [[switch.prise_bureau,on]]
+                - [wait 60,switch.prise_pc != unavailable,[[switch.prise_pc,on]]]
+            - if: input_boolean.pc_power == on AND input_boolean.in_home_zone == on
+              then:
+                - [wait 60,switch.prise_home_cinema != unavailable AND input_boolean.headset == off,[[input_boolean.hc_power,on]]]
+                - [wait 60,input_boolean.hc_power == on AND remote.remote_remote == on,[[input_boolean.hc_hdmi,on,8]]]
+ 
