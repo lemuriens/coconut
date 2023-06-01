@@ -268,8 +268,8 @@ humidity_max:
   min: 0
   max: 100
   unit_of_measurement: '%'
-rosee_sensibility:
-  name: Sensibilité du point de rosée
+humidex_sensibility:
+  name: Sensibilité de la température ressentie
   icon: mdi:water-percent
   min: 0
   max: 100

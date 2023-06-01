@@ -339,7 +339,7 @@
                         "type": "entities",
                         "entities": [
                           {
-                            "entity": "input_number.rosee_sensibility",
+                            "entity": "input_number.humidex_sensibility",
                             "icon": "mdi:home-percent-outline"
                           },
                           {
