@@ -256,12 +256,19 @@
                     {
                       "entity": "input_boolean.invitation",
                       "icon": "mdi:account-plus"
-                    },
+                    }
+                  ],
+                  "title": "Présence",
+                  "type": "entities",
+                  "show_header_toggle": false
+                },
+                {
+                  "entities": [
                     {
                       "entity": "input_boolean.reveil"
                     }
                   ],
-                  "title": "Autres",
+                  "title": "Réveil",
                   "type": "entities",
                   "show_header_toggle": false
                 },
