@@ -25,7 +25,7 @@ health_stats_2:
 ################################################################################
 json_activities:
   max: 255
-  initial: {}
+  initial: "{}"
 json_two_weeks_avg_temp:
   max: 255
-  initial: {}
+  initial: "{}"
