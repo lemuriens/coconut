@@ -10,7 +10,7 @@ water_heat_duration:
   icon: mdi:av-timer
   name: Temps d'activation manuel
   min: 0
-  max: 90
+  max: 120
   initial: 45
   unit_of_measurement: 'min'
 water_heat_person_number:
