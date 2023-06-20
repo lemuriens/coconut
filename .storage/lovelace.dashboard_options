@@ -300,6 +300,16 @@
                       {
                         "entities": [
                           {
+                            "entity": "input_number.water_heat_person_number",
+                            "icon": "mdi:account-group",
+                            "name": "Nombre de personne"
+                          },
+                          {
+                            "entity": "input_number.water_heat_adjustment",
+                            "icon": "mdi:percent",
+                            "name": "Correction temps de chauffe"
+                          },
+                          {
                             "entity": "input_number.water_heat_pct",
                             "icon": "mdi:water-boiler",
                             "name": "Pourcentage en heures creuses"
