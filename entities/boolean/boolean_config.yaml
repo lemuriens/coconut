@@ -23,6 +23,9 @@ module_healty:
 module_temp_hum:
   icon: mdi:thermometer
   name: Alerte température et humidité
+module_ventilation:
+  icon: mdi:hvac
+  name: Ventilation
 ################################################################################
 in_home_zone:
   icon: mdi:exit-run
