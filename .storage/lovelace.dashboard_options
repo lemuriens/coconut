@@ -315,14 +315,14 @@
                             "name": "Pourcentage en heures creuses"
                           },
                           {
-                            "entity": "input_boolean.water_heat_temp",
-                            "icon": "mdi:toggle-switch",
-                            "name": "Activation manuel"
-                          },
-                          {
                             "entity": "input_number.water_heat_duration",
                             "icon": "mdi:av-timer",
                             "name": "Temps d'activation manuel"
+                          },
+                          {
+                            "entity": "input_boolean.water_heat_temp",
+                            "icon": "mdi:toggle-switch",
+                            "name": "Activation manuel"
                           }
                         ],
                         "title": "Chauffe-eau automatique",
