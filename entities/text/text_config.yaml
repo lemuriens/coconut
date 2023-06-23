@@ -27,3 +27,5 @@ json_activities:
   max: 255
 json_two_weeks_avg_temp:
   max: 255
+json_humidex:
+  max: 255
