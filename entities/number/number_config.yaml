@@ -4,23 +4,19 @@ water_heat_pct:
   name: Pourcentage en heures creuses
   min: 0
   max: 100
-  initial: 5
   unit_of_measurement: '%'
 water_heat_duration:
   icon: mdi:av-timer
   name: Temps d'activation manuel
   min: 0
   max: 360
-  initial: 60
   unit_of_measurement: 'min'
 water_heat_person_number:
     min: 1
     max: 8
-    initial: 1
 water_heat_adjustment:
     min: -50
     max: 50
-    initial: 0
 ################################################################################
 temp_ext:
   name: Mesure température exterieure
@@ -28,7 +24,6 @@ temp_ext:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 ################################################################################  
 temp_int_1:
@@ -37,7 +32,6 @@ temp_int_1:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_2:
   name: Mesure température interieure 2
@@ -45,7 +39,6 @@ temp_int_2:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_3:
   name: Mesure température interieure 3
@@ -53,7 +46,6 @@ temp_int_3:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_4:
   name: Mesure température interieure 4
@@ -61,7 +53,6 @@ temp_int_4:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_5:
   name: Mesure température interieure 5
@@ -69,7 +60,6 @@ temp_int_5:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_6:
   name: Mesure température interieure 6
@@ -77,7 +67,6 @@ temp_int_6:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_7:
   name: Mesure température interieure 7
@@ -85,7 +74,6 @@ temp_int_7:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_8:
   name: Mesure température interieure 8
@@ -93,16 +81,13 @@ temp_int_8:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
-  
 temp_int_9:
   name: Mesure température interieure 9
   icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 temp_int_10:
   name: Mesure température interieure 10
@@ -110,7 +95,6 @@ temp_int_10:
   min: -40
   max: 70
   step: 0.1
-  initial: 20
   unit_of_measurement: '°'
 ################################################################################
 humidity_ext:
@@ -119,7 +103,6 @@ humidity_ext:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 ################################################################################
 humidity_int_1:
@@ -128,7 +111,6 @@ humidity_int_1:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_2:
   name: Mesure humidité interieure 2
@@ -136,7 +118,6 @@ humidity_int_2:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_3:
   name: Mesure humidité interieure 3
@@ -144,7 +125,6 @@ humidity_int_3:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_4:
   name: Mesure humidité interieure 4
@@ -152,7 +132,6 @@ humidity_int_4:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_5:
   name: Mesure humidité interieure 5
@@ -160,7 +139,6 @@ humidity_int_5:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_6:
   name: Mesure humidité interieure 6
@@ -168,7 +146,6 @@ humidity_int_6:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_7:
   name: Mesure humidité interieure 7
@@ -176,14 +153,12 @@ humidity_int_7:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_8:
   name: Mesure humidité interieure 8
   icon: mdi:water-percent
   min: 0
   max: 100
-  initial: 50
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_9:
@@ -192,7 +167,6 @@ humidity_int_9:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 humidity_int_10:
   name: Mesure humidité interieure 10
@@ -200,7 +174,6 @@ humidity_int_10:
   min: 0
   max: 100
   step: 0.1
-  initial: 50
   unit_of_measurement: '%'
 ################################################################################
 sun_angle_light_on:
@@ -243,14 +216,12 @@ sun_angle_cover_on:
   icon: mdi:weather-sunset-up
   min: -15
   max: 15
-  initial: 0
   unit_of_measurement: '°'
 sun_angle_cover_off:
   name: Angle du soleil fermeture volets
   icon: mdi:weather-sunset-up
   min: -15
   max: 15
-  initial: 0
   unit_of_measurement: '°'
 ################################################################################
 walk_chance:
