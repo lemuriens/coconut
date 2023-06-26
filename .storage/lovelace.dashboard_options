@@ -13,67 +13,81 @@
           "badges": [],
           "cards": [
             {
-              "type": "conditional",
-              "conditions": [
+              "type": "vertical-stack",
+              "cards": [
                 {
-                  "entity": "input_boolean.module_lights",
-                  "state": "on"
-                }
-              ],
-              "card": {
-                "type": "vertical-stack",
-                "cards": [
-                  {
-                    "entities": [
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_lights",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
                       {
-                        "entity": "input_number.color_rotate"
-                      },
-                      {
-                        "entity": "input_boolean.light_when_cloudy"
-                      },
-                      {
-                        "entity": "input_number.illuminance_light"
-                      },
-                      {
-                        "entity": "input_number.cloudy_light"
+                        "entities": [
+                          {
+                            "entity": "input_number.color_rotate"
+                          },
+                          {
+                            "entity": "input_boolean.light_when_cloudy"
+                          },
+                          {
+                            "entity": "input_number.illuminance_light"
+                          },
+                          {
+                            "entity": "input_number.cloudy_light"
+                          },
+                          {
+                            "entity": "input_datetime.sun_angle_light_on_time"
+                          },
+                          {
+                            "entity": "input_number.sun_angle_light_on"
+                          },
+                          {
+                            "entity": "input_datetime.night_light_time"
+                          },
+                          {
+                            "entity": "input_datetime.rise_light_time"
+                          },
+                          {
+                            "entity": "input_number.sun_angle_light_off"
+                          },
+                          {
+                            "entity": "input_datetime.sun_angle_light_off_time"
+                          }
+                        ],
+                        "title": "Lumières",
+                        "type": "entities"
                       }
-                    ],
-                    "show_header_toggle": false,
-                    "title": "Lumières automatique",
-                    "type": "entities"
-                  },
-                  {
-                    "entities": [
-                      {
-                        "entity": "input_datetime.sun_angle_light_on_time"
-                      },
-                      {
-                        "entity": "input_number.sun_angle_light_on"
-                      },
-                      {
-                        "entity": "input_datetime.night_light_time"
-                      }
-                    ],
-                    "title": "Paramètres lumières au coucher du soleil",
-                    "type": "entities"
-                  },
-                  {
-                    "entities": [
-                      {
-                        "entity": "input_datetime.rise_light_time"
-                      },
-                      {
-                        "entity": "input_number.sun_angle_light_off"
-                      },
-                      {
-                        "entity": "input_datetime.sun_angle_light_off_time"
-                      }
-                    ],
-                    "title": "Paramètres lumières au lever du soleil",
-                    "type": "entities"
+                    ]
                   }
-                ]
-              }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_ventilation",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "type": "entities",
+                        "entities": [
+                          "input_number.humidex_sensibility"
+                        ],
+                        "title": "Ventilation",
+                        "show_header_toggle": false
+                      }
+                    ]
+                  }
+                }
+              ]
             },
             {
               "type": "vertical-stack",
@@ -160,7 +174,8 @@
                         },
                         "entity": "input_boolean.module_water_heat",
                         "show_state": true,
-                        "icon_height": "40px"
+                        "icon_height": "40px",
+                        "name": "Chauffe-eau"
                       },
                       {
                         "show_name": true,
@@ -194,7 +209,8 @@
                         },
                         "entity": "input_boolean.module_temp_hum",
                         "show_state": true,
-                        "icon_height": "40px"
+                        "icon_height": "40px",
+                        "name": "Alertes température"
                       },
                       {
                         "show_name": true,
@@ -230,7 +246,7 @@
                             "entity": "input_number.sun_angle_cover_off"
                           }
                         ],
-                        "title": "Volets automatiques",
+                        "title": "Volets roulants",
                         "type": "entities",
                         "state_color": false
                       }
@@ -255,7 +271,7 @@
                             "name": "Chauffage automatique"
                           }
                         ],
-                        "title": "Chauffage automatique",
+                        "title": "Chauffage",
                         "type": "entities",
                         "state_color": false
                       }
@@ -267,30 +283,23 @@
                     {
                       "entity": "input_boolean.invitation",
                       "icon": "mdi:account-plus"
-                    }
-                  ],
-                  "title": "Présence",
-                  "type": "entities",
-                  "show_header_toggle": false
-                },
-                {
-                  "entities": [
+                    },
+                    {
+                      "entity": "input_boolean.alert_light"
+                    },
+                    {
+                      "entity": "input_boolean.alert_speaker"
+                    },
                     {
                       "entity": "input_boolean.reveil"
-                    }
-                  ],
-                  "title": "Réveil",
-                  "type": "entities",
-                  "show_header_toggle": false
-                },
-                {
-                  "entities": [
+                    },
                     {
                       "entity": "input_number.low_batteries"
                     }
                   ],
-                  "title": "Alerte capteurs batterie faible",
-                  "type": "entities"
+                  "title": "Autres paramètres",
+                  "type": "entities",
+                  "show_header_toggle": false
                 }
               ]
             },
@@ -336,7 +345,7 @@
                             "name": "Activation manuel"
                           }
                         ],
-                        "title": "Chauffe-eau automatique",
+                        "title": "Chauffe-eau",
                         "type": "entities",
                         "show_header_toggle": false
                       }
@@ -357,19 +366,6 @@
                       {
                         "type": "entities",
                         "entities": [
-                          "input_boolean.alert_light",
-                          "input_boolean.alert_speaker"
-                        ],
-                        "title": "Alertes vocales et lumineuses",
-                        "show_header_toggle": false
-                      },
-                      {
-                        "type": "entities",
-                        "entities": [
-                          {
-                            "entity": "input_number.humidex_sensibility",
-                            "icon": "mdi:home-percent-outline"
-                          },
                           {
                             "entity": "input_number.temp_max",
                             "icon": "mdi:thermometer"
@@ -385,7 +381,7 @@
                             "entity": "input_number.humidity_min"
                           }
                         ],
-                        "title": "Alertes température et humidité",
+                        "title": "Alertes température",
                         "show_header_toggle": false
                       }
                     ]
