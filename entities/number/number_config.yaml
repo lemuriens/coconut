@@ -176,21 +176,6 @@ humidity_int_10:
   step: 0.1
   unit_of_measurement: '%'
 ################################################################################
-humidex_ext:
-  name: Mesure humidex ext
-  icon: mdi:water-percent
-  min: -100
-  max: 100
-  step: 0.1
-  unit_of_measurement: '°'
-humidex_int:
-  name: Mesure humidex int
-  icon: mdi:water-percent
-  min: -100
-  max: 100
-  step: 0.1
-  unit_of_measurement: '°'
-################################################################################
 sun_angle_light_on:
   name: Angle du soleil départ lumières
   icon: mdi:weather-sunset-down
