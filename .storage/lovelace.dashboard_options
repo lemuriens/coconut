@@ -295,16 +295,35 @@
                   }
                 },
                 {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_update",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "vertical-stack",
+                    "cards": [
+                      {
+                        "entities": [
+                          {
+                            "entity": "input_datetime.update_at",
+                            "name": "Heure de mises à jour automatique"
+                          }
+                        ],
+                        "title": "Mises à jour automatique",
+                        "type": "entities",
+                        "state_color": false
+                      }
+                    ]
+                  }
+                },
+                {
                   "entities": [
                     {
                       "entity": "input_boolean.invitation",
                       "icon": "mdi:account-plus"
-                    },
-                    {
-                      "entity": "input_boolean.alert_light"
-                    },
-                    {
-                      "entity": "input_boolean.alert_speaker"
                     },
                     {
                       "entity": "input_boolean.reveil"
@@ -382,6 +401,12 @@
                       {
                         "type": "entities",
                         "entities": [
+                          {
+                            "entity": "input_boolean.alert_light"
+                          },
+                          {
+                            "entity": "input_boolean.alert_speaker"
+                          },
                           {
                             "entity": "input_number.temp_max",
                             "icon": "mdi:thermometer"
