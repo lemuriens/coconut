@@ -26,6 +26,7 @@ module_temp_hum:
 module_ventilation:
   icon: mdi:hvac
   name: Ventilation
+module_update:
 ################################################################################
 in_home_zone:
   icon: mdi:exit-run
