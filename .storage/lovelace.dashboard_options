@@ -233,7 +233,7 @@
                         "entity": "input_boolean.module_update",
                         "show_state": true,
                         "icon_height": "40px",
-                        "name": "Mises à jour automatique",
+                        "name": "Mises à jour automatiques",
                         "icon": "mdi:update",
                         "hold_action": {
                           "action": "more-info"
@@ -309,7 +309,12 @@
                         "entities": [
                           {
                             "entity": "input_datetime.update_at",
-                            "name": "Heure de mises à jour automatique"
+                            "name": "Heure de mises à jour automatiques"
+                          },
+                          {
+                            "entity": "input_boolean.immediate_update",
+                            "name": "Effectuer la mise à jour immédiatement",
+                            "icon": "mdi:update"
                           }
                         ],
                         "title": "Mises à jour automatique",
