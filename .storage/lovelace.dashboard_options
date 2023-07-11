@@ -79,7 +79,9 @@
                       {
                         "type": "entities",
                         "entities": [
-                          "input_number.humidex_sensibility"
+                          {
+                            "entity": "input_number.sensibility"
+                          }
                         ],
                         "title": "Ventilation",
                         "show_header_toggle": false

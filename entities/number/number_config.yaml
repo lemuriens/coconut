@@ -273,7 +273,7 @@ humidity_max:
   min: 0
   max: 100
   unit_of_measurement: '%'
-humidex_sensibility:
+sensibility:
   name: Sensibilité de la température ressentie
   icon: mdi:water-percent
   min: 0
