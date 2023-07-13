@@ -64,30 +64,6 @@
                       }
                     ]
                   }
-                },
-                {
-                  "type": "conditional",
-                  "conditions": [
-                    {
-                      "entity": "input_boolean.module_ventilation",
-                      "state": "on"
-                    }
-                  ],
-                  "card": {
-                    "type": "vertical-stack",
-                    "cards": [
-                      {
-                        "type": "entities",
-                        "entities": [
-                          {
-                            "entity": "input_number.sensibility"
-                          }
-                        ],
-                        "title": "Ventilation",
-                        "show_header_toggle": false
-                      }
-                    ]
-                  }
                 }
               ]
             },

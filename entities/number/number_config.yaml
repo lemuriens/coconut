@@ -273,12 +273,6 @@ humidity_max:
   min: 0
   max: 100
   unit_of_measurement: '%'
-sensibility:
-  name: Sensibilité de la température ressentie
-  icon: mdi:water-percent
-  min: 0
-  max: 100
-  unit_of_measurement: '%'
 ################################################################################
 low_batteries:
   name: Alerte batteries faibles
