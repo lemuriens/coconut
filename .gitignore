@@ -26,3 +26,5 @@ themes/*/*
 !themes/*/dark_themes.yaml
 
 !media/
+media/*
+!media/*.mp3
