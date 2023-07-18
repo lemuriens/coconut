@@ -1,8 +1,50 @@
 # INSTALLATION #################################################################
-1- COPY / PASTE /ENTITIES TO /CONFIG/ENTITIES
-2- INSTALL TERMINAL ADDON
-3- WITH TERMINAL CONNECT GIT AND DO (git init + git pull https://github.com/lemuriens/combava.git under /config folder)
-4- INSTALL FILE EDITOR ADDON:
+    # configuration.yaml #######################################################
+    default_config:
+    http:
+      ssl_certificate: /ssl/fullchain.pem
+      ssl_key: /ssl/privkey.pem
+    system_health:
+    discovery:
+        ignore:
+          - homekit
+    history:
+    hacs:
+      token: !secret hacs_token
+    person:
+    frontend:
+      themes: !include_dir_merge_named themes
+    # GOOGLE ###################################################################
+    google_assistant:
+      project_id: !secret google_assistant_project_id
+      service_account: !include SERVICE_ACCOUNT.json
+      exposed_domains:
+        - light
+        - switch
+    # TTS ######################################################################
+    tts:
+      - platform: edge_tts
+        language: fr-FR-HenriNeural
+    # FILES ####################################################################
+    homeassistant:
+      media_dirs:
+        media: /config/media
+      customize: !include_dir_merge_named entities/customize/
+    binary_sensor: !include_dir_merge_list entities/binary_sensor/
+    input_datetime: !include_dir_merge_named entities/datetime/
+    input_boolean: !include_dir_merge_named entities/boolean/
+    input_select: !include_dir_merge_named entities/select/
+    input_number: !include_dir_merge_named entities/number/
+    input_text: !include_dir_merge_named entities/text/
+    switch: !include_dir_merge_list entities/switch/
+    sensor: !include_dir_merge_list entities/sensor/
+    group: !include_dir_merge_named entities/group/
+    automation: !include automations.yaml
+    
+2- COPY / PASTE /ENTITIES TO /CONFIG/ENTITIES
+3- INSTALL TERMINAL ADDON
+4- WITH TERMINAL CONNECT GIT AND DO (git init + git pull https://github.com/lemuriens/combava.git under /config folder)
+5- INSTALL FILE EDITOR ADDON:
     CONFIG : ___________________________________________________________________
     dirsfirst: false
     enforce_basepath: true
@@ -21,12 +63,12 @@
       - node-red
     ssh_keys: []
     ____________________________________________________________________________
-5- INSTALL NODE-RED ADDON (credential_secret*="CHOOSE_YOURS",ssl=false), INSTALL DEPENDENCIES UNDER NODE-RED: node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay, node-red-contrib-gc-trigger
-6- INSTALL HACS ADDON (need GITHUB ACCOUNT), INSTALL LOVELACE ADDONS (HTML Jinja2 Template card / mini-graph-card / Dark Theme Pack for Home Assistant)
-7- INSTALL GITHUB ADDON (Star github.com/lemuriens/combava.git ON YOUR ACCOUNT)
-8- RESTART HA
-9- INSTALL DUCKDNS ADDON THEN, FIX IP ADDRESS FOR LOCAL HA AND MAKE HTTPS FOR EXTERNAL ACCESS
-10- GIT PULL
+6- INSTALL NODE-RED ADDON (credential_secret*="CHOOSE_YOURS",ssl=false), INSTALL DEPENDENCIES UNDER NODE-RED: node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay, node-red-contrib-gc-trigger
+7- INSTALL HACS ADDON (need GITHUB ACCOUNT), INSTALL LOVELACE ADDONS (HTML Jinja2 Template card / mini-graph-card / Dark Theme Pack for Home Assistant)
+8- INSTALL GITHUB ADDON (Star github.com/lemuriens/combava.git ON YOUR ACCOUNT)
+9- RESTART HA
+10- INSTALL DUCKDNS ADDON THEN, FIX IP ADDRESS FOR LOCAL HA AND MAKE HTTPS FOR EXTERNAL ACCESS
+11- GIT PULL
 
 EXEMPLE OF HOW TO CONFIGURE /config/entities/customize/customize_user.yaml : ___
 # CONFIGURATION ################################################################
