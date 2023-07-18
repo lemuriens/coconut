@@ -24,3 +24,5 @@ node-red/*
 !themes/*/
 themes/*/*
 !themes/*/dark_themes.yaml
+
+!media/
