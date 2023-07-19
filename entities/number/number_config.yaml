@@ -15,8 +15,8 @@ water_heat_person_number:
     min: 1
     max: 8
 water_heat_adjustment:
-    min: -50
-    max: 50
+    min: -10
+    max: 10
 ################################################################################
 temp_ext:
   name: Mesure température exterieure
