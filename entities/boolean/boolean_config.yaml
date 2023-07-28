@@ -60,6 +60,8 @@ alert_speaker:
   name: Alerte audio
   icon: mdi:home-thermometer-outline
 ################################################################################
+silent_speaker:
+################################################################################
 reveil:
   icon: mdi:alarm
   name: Reveil ambiance
