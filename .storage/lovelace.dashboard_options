@@ -323,11 +323,11 @@
                   "type": "entities",
                   "entities": [
                     {
-                      "entity": "input_datetime.silent_speaker_end",
+                      "entity": "input_datetime.silent_speaker_start",
                       "name": "Déclenchement du mode silencieux"
                     },
                     {
-                      "entity": "input_datetime.silent_speaker_start",
+                      "entity": "input_datetime.silent_speaker_end",
                       "name": "Arrêt du mode silencieux"
                     }
                   ],
