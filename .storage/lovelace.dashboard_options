@@ -313,6 +313,14 @@
                     },
                     {
                       "entity": "input_number.low_batteries"
+                    },
+                    {
+                      "entity": "input_datetime.silent_speaker_end",
+                      "name": "Déclenchement du mode silencieux (enceintes)"
+                    },
+                    {
+                      "entity": "input_datetime.silent_speaker_start",
+                      "name": "Arrêt du mode silencieux (enceintes)"
                     }
                   ],
                   "title": "Autres paramètres",
