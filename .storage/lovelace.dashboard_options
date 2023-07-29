@@ -208,6 +208,21 @@
                         "tap_action": {
                           "action": "toggle"
                         },
+                        "entity": "input_boolean.module_alarm_clock",
+                        "show_state": true,
+                        "icon_height": "40px",
+                        "name": "Réveil",
+                        "hold_action": {
+                          "action": "more-info"
+                        }
+                      },
+                      {
+                        "show_name": true,
+                        "show_icon": true,
+                        "type": "button",
+                        "tap_action": {
+                          "action": "toggle"
+                        },
                         "entity": "input_boolean.module_update",
                         "show_state": true,
                         "icon_height": "40px",
@@ -309,9 +324,6 @@
                       "icon": "mdi:account-plus"
                     },
                     {
-                      "entity": "input_boolean.reveil"
-                    },
-                    {
                       "entity": "input_number.low_batteries"
                     }
                   ],
@@ -323,15 +335,21 @@
                   "type": "entities",
                   "entities": [
                     {
-                      "entity": "input_datetime.silent_speaker_start",
-                      "name": "Déclenchement du mode silencieux"
+                      "entity": "input_datetime.speaker_day_mode_start",
+                      "name": "Heure de déclenchement du mode jour"
                     },
                     {
-                      "entity": "input_datetime.silent_speaker_end",
-                      "name": "Arrêt du mode silencieux"
+                      "entity": "input_number.speaker_day_mode_volume"
+                    },
+                    {
+                      "entity": "input_datetime.speaker_night_mode_start",
+                      "name": "Heure de déclenchement du mode nuit"
+                    },
+                    {
+                      "entity": "input_number.speaker_night_mode_volume"
                     }
                   ],
-                  "title": "Enceinte connectées",
+                  "title": "Enceintes connectées",
                   "show_header_toggle": false
                 }
               ]
@@ -425,26 +443,6 @@
                       }
                     ]
                   }
-                }
-              ]
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "entities": [
-                    {
-                      "entity": "input_datetime.silent_speaker_end",
-                      "name": "Déclenchement du mode silencieux"
-                    },
-                    {
-                      "entity": "input_datetime.silent_speaker_start",
-                      "name": "Arrêt du mode silencieux"
-                    }
-                  ],
-                  "title": "Enceinte connectées",
-                  "type": "entities",
-                  "show_header_toggle": false
                 }
               ]
             }

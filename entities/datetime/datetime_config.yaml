@@ -22,11 +22,11 @@ sun_angle_light_off_time:
 update_at:
     has_date: false
     has_time: true
-silent_speaker_end:
-    icon: mdi:volume-source
+speaker_day_mode_start:
+    icon: mdi:speaker
     has_date: false
     has_time: true
-silent_speaker_start:
-    icon: mdi:volume-medium
+speaker_night_mode_start:
+    icon: mdi:speaker
     has_date: false
     has_time: true

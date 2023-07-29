@@ -26,6 +26,9 @@ module_temp_hum:
 module_ventilation:
   icon: mdi:hvac
   name: Ventilation
+module_alarm_clock:
+  icon: mdi:alarm
+  name: Réveil
 module_update:
 ################################################################################
 in_home_zone:
@@ -60,7 +63,7 @@ alert_speaker:
   name: Alerte audio
   icon: mdi:home-thermometer-outline
 ################################################################################
-silent_speaker:
+speaker_day_night_mode:
 ################################################################################
 reveil:
   icon: mdi:alarm

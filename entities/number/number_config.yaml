@@ -281,3 +281,18 @@ low_batteries:
   max: 30
   step: 1
   unit_of_measurement: '%'
+################################################################################
+speaker_day_mode_volume:
+  name: Volume en mode jour
+  icon: mdi:volume-high
+  min: 0
+  max: 100
+  step: 1
+  unit_of_measurement: '%'
+speaker_night_mode_volume:
+  name: Volume en mode nuit
+  icon: mdi:volume-medium
+  min: 0
+  max: 100
+  step: 1
+  unit_of_measurement: '%'
