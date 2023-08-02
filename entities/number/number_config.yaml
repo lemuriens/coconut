@@ -20,7 +20,6 @@ water_heat_adjustment:
 ################################################################################
 temp_ext:
   name: Mesure température exterieure
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
@@ -28,70 +27,60 @@ temp_ext:
 ################################################################################  
 temp_int_1:
   name: Mesure température interieure 1
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_2:
   name: Mesure température interieure 2
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_3:
   name: Mesure température interieure 3
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_4:
   name: Mesure température interieure 4
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_5:
   name: Mesure température interieure 5
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_6:
   name: Mesure température interieure 6
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_7:
   name: Mesure température interieure 7
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_8:
   name: Mesure température interieure 8
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_9:
   name: Mesure température interieure 9
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
   unit_of_measurement: '°'
 temp_int_10:
   name: Mesure température interieure 10
-  icon: mdi:thermometer-bluetooth
   min: -40
   max: 70
   step: 0.1
@@ -99,7 +88,6 @@ temp_int_10:
 ################################################################################
 humidity_ext:
   name: Mesure humidité exterieure
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
@@ -107,70 +95,60 @@ humidity_ext:
 ################################################################################
 humidity_int_1:
   name: Mesure humidité interieure 1
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_2:
   name: Mesure humidité interieure 2
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_3:
   name: Mesure humidité interieure 3
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_4:
   name: Mesure humidité interieure 4
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_5:
   name: Mesure humidité interieure 5
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_6:
   name: Mesure humidité interieure 6
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_7:
   name: Mesure humidité interieure 7
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_8:
   name: Mesure humidité interieure 8
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_9:
   name: Mesure humidité interieure 9
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
   unit_of_measurement: '%'
 humidity_int_10:
   name: Mesure humidité interieure 10
-  icon: mdi:water-percent
   min: 0
   max: 100
   step: 0.1
