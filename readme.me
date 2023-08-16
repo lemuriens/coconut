@@ -1,13 +1,11 @@
 # INSTALLATION #################################################################
-    # configuration.yaml #######################################################
+    # CONFIGURATION ################################################################
     default_config:
     http:
-      ssl_certificate: /ssl/fullchain.pem
-      ssl_key: /ssl/privkey.pem
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 172.30.33.0/24
     system_health:
-    discovery:
-        ignore:
-          - homekit
     history:
     hacs:
       token: !secret hacs_token
@@ -57,13 +55,32 @@
       - SERVICE*
       - blueprints
       - custom_components
-      - known_devices.yaml
       - home-assistant*
       - .*
-      - node-red
     ssh_keys: []
     ____________________________________________________________________________
-6- INSTALL NODE-RED ADDON (credential_secret*="CHOOSE_YOURS",ssl=false), INSTALL DEPENDENCIES UNDER NODE-RED: node-red-contrib-looptimer, node-red-contrib-stoptimer-varidelay, node-red-contrib-gc-trigger
+6- INSTALL NODE-RED ADDON:
+    CONFIG : ___________________________________________________________________
+    credential_secret: "CHOOSE_YOURS"
+    theme: midnight-red
+    http_node:
+      username: ""
+      password: ""
+    http_static:
+      username: ""
+      password: ""
+    ssl: false
+    certfile: fullchain.pem
+    keyfile: privkey.pem
+    system_packages: []
+    npm_packages: []
+    init_commands: []
+    safe_mode: false
+    INSTALL DEPENDENCIES UNDER NODE-RED: 
+        node-red-contrib-looptimer, 
+        node-red-contrib-stoptimer-varidelay
+        node-red-contrib-comfort
+        
 7- INSTALL HACS ADDON (need GITHUB ACCOUNT), INSTALL LOVELACE ADDONS (HTML Jinja2 Template card / mini-graph-card / Dark Theme Pack for Home Assistant)
 8- INSTALL GITHUB ADDON (Star github.com/lemuriens/combava.git ON YOUR ACCOUNT)
 9- RESTART HA
