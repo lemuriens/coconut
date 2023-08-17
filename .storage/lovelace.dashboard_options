@@ -623,7 +623,7 @@
                   "font_size": 80,
                   "color_thresholds": [
                     {
-                      "color": "#ff5555",
+                      "color": "#5555ff",
                       "value": 70
                     },
                     {
@@ -635,7 +635,7 @@
                       "value": 40
                     },
                     {
-                      "color": "#5555ff",
+                      "color": "#ff5555",
                       "value": 30
                     }
                   ],
