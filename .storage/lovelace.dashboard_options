@@ -624,7 +624,7 @@
                   ],
                   "hours_to_show": 48,
                   "line_width": 2,
-                  "name": "Températures",
+                  "name": "Température",
                   "points_per_hour": 1,
                   "align_state": "center"
                 },
