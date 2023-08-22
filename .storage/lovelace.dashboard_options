@@ -569,31 +569,31 @@
                   "font_size": 80,
                   "color_thresholds": [
                     {
-                      "color": "#A60F06",
+                      "color": "#ff0d00",
                       "value": 40
                     },
                     {
-                      "color": "#EA8E10",
+                      "color": "#ff9500",
                       "value": 30
                     },
                     {
-                      "color": "#6AAB56",
+                      "color": "#3cff00",
                       "value": 20
                     },
                     {
-                      "color": "#22845B",
+                      "color": "#00ff95",
                       "value": 10
                     },
                     {
-                      "color": "#93BAEB",
+                      "color": "#0073ff",
                       "value": 0
                     },
                     {
-                      "color": "#7074DA",
+                      "color": "#0008ff",
                       "value": -10
                     },
                     {
-                      "color": "#605BC9",
+                      "color": "#0d00ff",
                       "value": -20
                     }
                   ],
@@ -635,23 +635,23 @@
                   "font_size": 80,
                   "color_thresholds": [
                     {
-                      "color": "#93BAEB",
+                      "color": "#0073ff",
                       "value": 70
                     },
                     {
-                      "color": "#22845C",
+                      "color": "#00ff99",
                       "value": 60
                     },
                     {
-                      "color": "#6AAC56",
+                      "color": "#3cff00",
                       "value": 50
                     },
                     {
-                      "color": "#EA8F10",
+                      "color": "#ff9500",
                       "value": 40
                     },
                     {
-                      "color": "#A30D06",
+                      "color": "#ff0d00",
                       "value": 30
                     }
                   ],
