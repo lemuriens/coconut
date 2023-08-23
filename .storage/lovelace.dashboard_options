@@ -381,16 +381,6 @@
                             "name": "Correction temps de chauffe"
                           },
                           {
-                            "entity": "input_number.water_heat_pct",
-                            "icon": "mdi:water-boiler",
-                            "name": "Pourcentage en heures creuses"
-                          },
-                          {
-                            "entity": "input_number.water_heat_duration",
-                            "icon": "mdi:av-timer",
-                            "name": "Temps d'activation manuel"
-                          },
-                          {
                             "entity": "input_boolean.water_heat_temp",
                             "icon": "mdi:toggle-switch",
                             "name": "Activation manuel"
@@ -399,6 +389,21 @@
                         "title": "Chauffe-eau",
                         "type": "entities",
                         "show_header_toggle": false
+                      },
+                      {
+                        "square": false,
+                        "type": "grid",
+                        "cards": [
+                          {
+                            "type": "entity",
+                            "entity": "input_number.water_heat_pct"
+                          },
+                          {
+                            "type": "entity",
+                            "entity": "input_number.water_heat_duration"
+                          }
+                        ],
+                        "columns": 2
                       }
                     ]
                   }
