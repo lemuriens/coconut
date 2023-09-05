@@ -423,6 +423,9 @@
                         "type": "entities",
                         "entities": [
                           {
+                            "entity": "input_boolean.notification_temp_hum_sensor"
+                          },
+                          {
                             "entity": "input_boolean.alert_light"
                           },
                           {
@@ -443,7 +446,7 @@
                             "entity": "input_number.humidity_min"
                           }
                         ],
-                        "title": "Alertes température",
+                        "title": "Alertes température - humidité",
                         "show_header_toggle": false
                       }
                     ]
