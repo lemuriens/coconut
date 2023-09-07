@@ -423,9 +423,6 @@
                         "type": "entities",
                         "entities": [
                           {
-                            "entity": "input_boolean.notification_temp_hum_sensor"
-                          },
-                          {
                             "entity": "input_boolean.alert_light"
                           },
                           {

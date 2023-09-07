@@ -62,9 +62,6 @@ alert_light:
 alert_speaker:
   name: Alerte audio
   icon: mdi:home-thermometer-outline
-notification_temp_hum_sensor:
-  name: Notification de capteurs en défaut
-  icon: mdi:alert
 ################################################################################
 speaker_day_night_mode:
 ################################################################################
