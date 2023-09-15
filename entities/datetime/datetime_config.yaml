@@ -19,9 +19,6 @@ sun_angle_light_off_time:
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
-update_at:
-    has_date: false
-    has_time: true
 speaker_day_mode_start:
     icon: mdi:speaker
     has_date: false

@@ -288,36 +288,6 @@
                   }
                 },
                 {
-                  "type": "conditional",
-                  "conditions": [
-                    {
-                      "entity": "input_boolean.module_update",
-                      "state": "on"
-                    }
-                  ],
-                  "card": {
-                    "type": "vertical-stack",
-                    "cards": [
-                      {
-                        "entities": [
-                          {
-                            "entity": "input_datetime.update_at",
-                            "name": "Heure de mises à jour automatiques"
-                          },
-                          {
-                            "entity": "input_boolean.immediate_update",
-                            "name": "Effectuer la mise à jour immédiatement",
-                            "icon": "mdi:update"
-                          }
-                        ],
-                        "title": "Mises à jour automatique",
-                        "type": "entities",
-                        "state_color": false
-                      }
-                    ]
-                  }
-                },
-                {
                   "entities": [
                     {
                       "entity": "input_boolean.invitation",
