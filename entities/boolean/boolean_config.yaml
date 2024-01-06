@@ -72,6 +72,7 @@ reveil:
 stores_auto:
   icon: mdi:window-shutter-open
   name: Volets automatiques
+stores_status:
 ################################################################################  
 motivation:
   icon: mdi:calendar-month-outline
