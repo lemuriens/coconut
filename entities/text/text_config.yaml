@@ -22,6 +22,12 @@ health_stats_1:
 health_stats_2:
   name: Statistiques entrainements santé
   max: 255
+health_stats_3:
+  name: Statistiques entrainements santé
+  max: 255
+health_stats_4:
+  name: Statistiques entrainements santé
+  max: 255
 ################################################################################
 json_activities:
   max: 255

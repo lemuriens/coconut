@@ -444,7 +444,7 @@
               "card": {
                 "type": "custom:html-template-card",
                 "ignore_line_breaks": true,
-                "content": "{{states(\"input_text.health_stats_1\")}}\n{{states(\"input_text.health_stats_2\")}}\n"
+                "content": "{{states(\"input_text.health_stats_1\")}}{{states(\"input_text.health_stats_2\")}}{{states(\"input_text.health_stats_3\")}}{{states(\"input_text.health_stats_4\")}}\n"
               }
             },
             {
