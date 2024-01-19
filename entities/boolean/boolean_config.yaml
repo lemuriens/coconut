@@ -76,27 +76,6 @@ stores_status:
 motivation:
   icon: mdi:calendar-month-outline
   name: Activités physiques
-walk:
-  icon: mdi:walk
-  name: Marche
-run:
-  icon: mdi:run
-  name: Course
-fitness:
-  icon: mdi:dumbbell
-  name: Musculation
-stretching:
-  icon: mdi:meditation
-  name: Etirement
-motivation_increment:
-  icon: mdi:numeric-positive-1
-  name: Incrémentation des chances
-motivation_resend:
-  icon: mdi:refresh
-  name: Renvoyer  les objectifs de la semaine
-motivation_reset:
-  icon: mdi:backup-restore
-  name: Réinitialisation
 ################################################################################
 update_available_on_lemuriens_coconut:
 update_from_lemuriens_coconut:
