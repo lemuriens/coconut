@@ -435,10 +435,6 @@
                 {
                   "entity": "input_boolean.motivation",
                   "state": "on"
-                },
-                {
-                  "entity": "input_boolean.motivation",
-                  "state": "on"
                 }
               ],
               "card": {
@@ -460,36 +456,9 @@
                       "name": "Renvoyer  les objectifs de la semaine"
                     },
                     {
-                      "entity": "input_boolean.motivation_increment"
-                    },
-                    {
-                      "entity": "input_boolean.walk"
-                    },
-                    {
-                      "entity": "input_number.walk_chance"
-                    },
-                    {
-                      "entity": "input_boolean.run"
-                    },
-                    {
-                      "entity": "input_number.run_chance"
-                    },
-                    {
-                      "entity": "input_boolean.fitness"
-                    },
-                    {
-                      "entity": "input_number.fitness_chance"
-                    },
-                    {
-                      "entity": "input_boolean.stretching"
-                    },
-                    {
-                      "entity": "input_number.stretching_chance"
-                    },
-                    {
                       "entity": "input_boolean.motivation_reset",
                       "icon": "mdi:backup-restore",
-                      "name": "Réinitialisation"
+                      "name": "⚠️ Recommencer au premier jour ⚠️"
                     }
                   ],
                   "show_header_toggle": false,

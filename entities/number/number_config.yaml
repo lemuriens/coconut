@@ -202,31 +202,6 @@ sun_angle_cover_off:
   max: 15
   unit_of_measurement: '°'
 ################################################################################
-walk_chance:
-  name: Chance d'aller marcher
-  icon: mdi:clover
-  min: 0
-  max: 100
-  unit_of_measurement: '%'
-run_chance:
-  name: Chance d'aller courir
-  icon: mdi:clover
-  min: 0
-  max: 100
-  unit_of_measurement: '%'
-fitness_chance:
-  name: Chance d'aller en salle
-  icon: mdi:clover
-  min: 0
-  max: 100
-  unit_of_measurement: '%'
-stretching_chance:
-  name: Chance étirement/détente
-  icon: mdi:clover
-  min: 0
-  max: 100
-  unit_of_measurement: '%'
-################################################################################
 temp_min:
   name: Température basse d'alerte
   icon: mdi:home-thermometer-outline

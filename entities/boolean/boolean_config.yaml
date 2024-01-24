@@ -76,6 +76,12 @@ stores_status:
 motivation:
   icon: mdi:calendar-month-outline
   name: Activités physiques
+motivation_resend:
+  icon: mdi:refresh
+  name: Renvoyer les objectifs de la semaine
+motivation_reset:
+  icon: mdi:backup-restore
+  name: ⚠️ Recommencer au premier jour ⚠️
 ################################################################################
 update_available_on_lemuriens_coconut:
 update_from_lemuriens_coconut:
