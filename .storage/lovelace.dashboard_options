@@ -420,51 +420,55 @@
                   }
                 }
               ]
-            }
-          ]
-        },
-        {
-          "theme": "Backend-selected",
-          "title": "Sport & Santé",
-          "path": "sport",
-          "badges": [],
-          "cards": [
-            {
-              "type": "conditional",
-              "conditions": [
-                {
-                  "entity": "input_boolean.motivation",
-                  "state": "on"
-                }
-              ],
-              "card": {
-                "type": "custom:html-template-card",
-                "ignore_line_breaks": true,
-                "content": "{{states(\"input_text.health_stats_1\")}}{{states(\"input_text.health_stats_2\")}}{{states(\"input_text.health_stats_3\")}}{{states(\"input_text.health_stats_4\")}}\n"
-              }
             },
             {
               "cards": [
                 {
-                  "entities": [
+                  "type": "conditional",
+                  "conditions": [
                     {
-                      "entity": "input_boolean.motivation"
-                    },
-                    {
-                      "entity": "input_boolean.motivation_resend",
-                      "icon": "mdi:refresh",
-                      "name": "Renvoyer  les objectifs de la semaine"
-                    },
-                    {
-                      "entity": "input_boolean.motivation_reset",
-                      "icon": "mdi:backup-restore",
-                      "name": "⚠️ Recommencer au premier jour ⚠️"
+                      "entity": "input_boolean.motivation",
+                      "state": "on"
                     }
                   ],
-                  "show_header_toggle": false,
-                  "type": "entities",
-                  "title": "Santé et forme",
-                  "state_color": false
+                  "card": {
+                    "type": "custom:html-template-card",
+                    "ignore_line_breaks": true,
+                    "content": "{{states(\"input_text.health_stats_1\")}}{{states(\"input_text.health_stats_2\")}}{{states(\"input_text.health_stats_3\")}}{{states(\"input_text.health_stats_4\")}}\n"
+                  }
+                },
+                {
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "condition": "state",
+                      "entity": "input_boolean.motivation",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "cards": [
+                      {
+                        "entities": [
+                          {
+                            "entity": "input_boolean.motivation_resend",
+                            "icon": "mdi:refresh",
+                            "name": "Renvoyer  les objectifs de la semaine"
+                          },
+                          {
+                            "entity": "input_boolean.motivation_reset",
+                            "icon": "mdi:backup-restore",
+                            "name": "⚠️ Recommencer au premier jour ⚠️"
+                          }
+                        ],
+                        "show_header_toggle": false,
+                        "type": "entities",
+                        "title": "Sport et santé",
+                        "state_color": false
+                      }
+                    ],
+                    "type": "vertical-stack"
+                  }
                 }
               ],
               "type": "vertical-stack"
