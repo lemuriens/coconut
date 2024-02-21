@@ -154,17 +154,17 @@ humidity_int_10:
   step: 0.1
   unit_of_measurement: '%'
 ################################################################################
-sun_angle_light_on:
-  name: Angle du soleil départ lumières
-  icon: mdi:weather-sunset-down
-  min: 0
-  max: 20
-  unit_of_measurement: '°'
-sun_angle_light_off:
-  name: Angle du soleil arrêt lumières
-  icon: mdi:weather-sunset-up
-  min: 0
-  max: 20
+sun_light_angle_setting_rising:
+  min: 1
+  max: 12
+  name: Angle pour allumer/éteindre les lumières
+  icon: mdi:theme-light-dark
+  unit_of_measurement: '°'    
+sun_light_angle_dusk_dawn:
+  min: -5
+  max: 0
+  name: Angle luminosité maximum
+  icon: mdi:theme-light-dark
   unit_of_measurement: '°'
 elevation:
   min: -100
@@ -176,11 +176,17 @@ color_rotate:
   min: 0
   max: 360
   unit_of_measurement: '°'
+color_segment:
+  name: Angle de balayage chromatique
+  icon: mdi:palette
+  min: 0
+  max: 360
+  unit_of_measurement: '°'
 cloudy_light:
   name: Lumière anti-nuages
   icon: mdi:cloud-off-outline
   min: 50
-  max: 4000
+  max: 1000
   unit_of_measurement: 'Lux'
 illuminance_light:
   name: Luminosité extérieure

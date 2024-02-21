@@ -1,21 +1,31 @@
 # LIGHTS #######################################################################
-sun_angle_light_on_time:
-    name: Allumer les lumières
+sun_light_time_setting:
+    name: Heure départ lumière 
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
-night_light_time:
-    name: Luminosité au minimal
+sun_light_time_dusk:
+    name: Heure luminosité maximale 
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
-rise_light_time:
-    name: Luminosité en augmentation
+sun_light_time_midnight:
+    name: Heure luminosité minimale 
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
-sun_angle_light_off_time:
-    name: Eteindre les lumières
+sun_light_time_dawn:
+    name: Heure luminosité à l'aube
+    icon: mdi:lightbulb-group
+    has_date: false
+    has_time: true
+sun_light_time_dawn_angle:
+    name: Heure angle luminosité à l'aube
+    icon: mdi:lightbulb-group
+    has_date: false
+    has_time: true
+sun_light_time_rising:
+    name: Heure luminosité arrêt lumière
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true

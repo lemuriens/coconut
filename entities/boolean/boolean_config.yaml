@@ -71,6 +71,9 @@ reveil:
 stores_auto:
   icon: mdi:window-shutter-open
   name: Volets automatiques
+stores_day_night:
+  icon: mdi:sun-clock
+  name: Contrôlé par le soleil
 stores_status:
 ################################################################################  
 motivation:

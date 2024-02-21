@@ -29,34 +29,31 @@
                       {
                         "entities": [
                           {
-                            "entity": "input_number.color_rotate"
+                            "entity": "input_number.sun_light_angle_setting_rising"
                           },
                           {
-                            "entity": "input_boolean.light_when_cloudy"
+                            "entity": "input_number.sun_light_angle_dusk_dawn"
+                          },
+                          {
+                            "entity": "input_datetime.sun_light_time_midnight"
+                          },
+                          {
+                            "entity": "input_datetime.sun_light_time_dawn"
                           },
                           {
                             "entity": "input_number.illuminance_light"
                           },
                           {
+                            "entity": "input_boolean.light_when_cloudy"
+                          },
+                          {
                             "entity": "input_number.cloudy_light"
                           },
                           {
-                            "entity": "input_datetime.sun_angle_light_on_time"
+                            "entity": "input_number.color_rotate"
                           },
                           {
-                            "entity": "input_number.sun_angle_light_on"
-                          },
-                          {
-                            "entity": "input_datetime.night_light_time"
-                          },
-                          {
-                            "entity": "input_datetime.rise_light_time"
-                          },
-                          {
-                            "entity": "input_number.sun_angle_light_off"
-                          },
-                          {
-                            "entity": "input_datetime.sun_angle_light_off_time"
+                            "entity": "input_number.color_segment"
                           }
                         ],
                         "title": "Lumières",
@@ -64,6 +61,10 @@
                       }
                     ]
                   }
+                },
+                {
+                  "type": "markdown",
+                  "content": ">Lumières allumées à : **{{states(\"input_datetime.sun_light_time_setting\")}}**<br> Luminosité maximale : **{{states(\"input_datetime.sun_light_time_dusk\")}}**<br> Luminosité minimale : **{{states(\"input_datetime.sun_light_time_midnight\")}}**<br>  Luminosité maximale : **{{states(\"input_datetime.sun_light_time_dawn\")}}**<br> Lumières éteintes à : **{{states(\"input_datetime.sun_light_time_rising\")}}**<div>"
                 }
               ]
             },
@@ -248,6 +249,9 @@
                     "cards": [
                       {
                         "entities": [
+                          {
+                            "entity": "input_boolean.stores_day_night"
+                          },
                           {
                             "entity": "input_number.sun_angle_cover_on"
                           },
