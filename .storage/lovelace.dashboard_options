@@ -63,8 +63,17 @@
                   }
                 },
                 {
-                  "type": "markdown",
-                  "content": ">Lumières allumées à : **{{states(\"input_datetime.sun_light_time_setting\")}}**<br> Luminosité maximale : **{{states(\"input_datetime.sun_light_time_dusk\")}}**<br> Luminosité minimale : **{{states(\"input_datetime.sun_light_time_midnight\")}}**<br>  Luminosité maximale : **{{states(\"input_datetime.sun_light_time_dawn\")}}**<br> Lumières éteintes à : **{{states(\"input_datetime.sun_light_time_rising\")}}**<div>"
+                  "type": "conditional",
+                  "conditions": [
+                    {
+                      "entity": "input_boolean.module_lights",
+                      "state": "on"
+                    }
+                  ],
+                  "card": {
+                    "type": "markdown",
+                    "content": "Heure dorée : **{{states(\"input_datetime.sun_light_time_setting\")}}**<br>  Crépuscule : **{{states(\"input_datetime.sun_light_time_dusk\")}}**<br> Nuit : **{{states(\"input_datetime.sun_light_time_midnight\")}}**<br>   Aube : **{{states(\"input_datetime.sun_light_time_dawn\")}}**<br> Soleil levé : **{{states(\"input_datetime.sun_light_time_rising\")}}**<div>"
+                  }
                 }
               ]
             },

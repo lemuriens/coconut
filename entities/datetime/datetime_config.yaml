@@ -1,21 +1,21 @@
 # LIGHTS #######################################################################
 sun_light_time_setting:
-    name: Heure départ lumière 
+    name: Heure couché du soleil
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
 sun_light_time_dusk:
-    name: Heure luminosité maximale 
+    name: Heure crépuscule
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
 sun_light_time_midnight:
-    name: Heure luminosité minimale 
+    name: Heure de couché
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
 sun_light_time_dawn:
-    name: Heure luminosité à l'aube
+    name: Heure à l'aube
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
@@ -25,7 +25,7 @@ sun_light_time_dawn_angle:
     has_date: false
     has_time: true
 sun_light_time_rising:
-    name: Heure luminosité arrêt lumière
+    name: Heure levé du soleil
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true

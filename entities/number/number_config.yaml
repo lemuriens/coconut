@@ -157,13 +157,13 @@ humidity_int_10:
 sun_light_angle_setting_rising:
   min: 1
   max: 12
-  name: Angle pour allumer/éteindre les lumières
+  name: Angle couché / levé du soleil
   icon: mdi:theme-light-dark
   unit_of_measurement: '°'    
 sun_light_angle_dusk_dawn:
   min: -5
   max: 0
-  name: Angle luminosité maximum
+  name: Angle crépuscule / aube
   icon: mdi:theme-light-dark
   unit_of_measurement: '°'
 elevation:
