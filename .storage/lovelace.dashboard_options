@@ -76,7 +76,7 @@
                   ],
                   "card": {
                     "type": "markdown",
-                    "content": "Heure dorée : **{{states(\"input_datetime.sun_light_time_setting\")}}**<br>  Crépuscule : **{{states(\"input_datetime.sun_light_time_dusk\")}}**<br> Nuit : **{{states(\"input_datetime.sun_light_time_midnight\")}}**<br>   Aube : **{{states(\"input_datetime.sun_light_time_dawn\")}}**<br> Soleil levé : **{{states(\"input_datetime.sun_light_time_rising\")}}**<div>"
+                    "content": "Heure ou les lumières s'allument : **{{states(\"input_datetime.sun_light_time_setting\")}}**<br>   Heure ou les lumières sont au maximum : **{{states(\"input_datetime.sun_light_time_dusk\")}}**<br>  Heure ou les lumières passent en mode nuit : **{{states(\"input_datetime.sun_light_time_midnight\")}}**<br>    Heure ou les lumières sont au maximum : **{% if states(\"input_datetime.sun_light_time_dawn\")<states(\"input_datetime.sun_light_time_dawn_angle\") -%}\n  {{states(\"input_datetime.sun_light_time_dawn\")}}\n  {%- else -%}\n  {{states(\"input_datetime.sun_light_time_dawn_angle\")}}\n  {%- endif %}**<br> Heure ou les lumières s'éteignent : **{{states(\"input_datetime.sun_light_time_rising\")}}**<div>"
                   }
                 }
               ]
