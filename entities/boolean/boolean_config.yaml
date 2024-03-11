@@ -53,7 +53,6 @@ water_heat_temp:
 light_when_cloudy:
   name: Lumière anti-nuages
   icon: mdi:cloud-off-outline
-light_time_status:
 color_reverse:
     name: Inversion du sens de rotation des couleurs
     icon: mdi:palette
