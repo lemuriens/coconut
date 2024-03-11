@@ -471,12 +471,18 @@
                         "entity": "input_boolean.motivation_resend",
                         "show_entity_picture": false,
                         "vertical": false,
-                        "hide_state": true
+                        "hide_state": true,
+                        "tap_action": {
+                          "action": "toggle"
+                        }
                       },
                       {
                         "type": "tile",
                         "entity": "input_boolean.motivation_reset",
-                        "hide_state": true
+                        "hide_state": true,
+                        "tap_action": {
+                          "action": "toggle"
+                        }
                       }
                     ],
                     "type": "vertical-stack"
