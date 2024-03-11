@@ -61,7 +61,8 @@
                           }
                         ],
                         "title": "Lumières",
-                        "type": "entities"
+                        "type": "entities",
+                        "show_header_toggle": false
                       }
                     ]
                   }
