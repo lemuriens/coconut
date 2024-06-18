@@ -494,6 +494,18 @@
           ]
         },
         {
+          "title": "Configuration",
+          "path": "configuration",
+          "type": "panel",
+          "cards": [
+            {
+              "type": "iframe",
+              "url": "https://home-assistant-erwan.duckdns.org/test.html",
+              "aspect_ratio": "50%"
+            }
+          ]
+        },
+        {
           "theme": "Backend-selected",
           "title": "Exemple de tuiles",
           "path": "c",
