@@ -63,6 +63,7 @@ alert_light:
 alert_speaker:
   name: Alerte audio
   icon: mdi:home-thermometer-outline
+high_temp_home:
 ################################################################################
 speaker_day_night_mode:
 ################################################################################
