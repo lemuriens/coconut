@@ -3,6 +3,10 @@ heat_temp:
   name: Consigne
   icon: mdi:home-thermometer-outline
 ################################################################################
+home_comfort:
+  name: Confort
+  max: 255
+################################################################################
 recap_1:
   max: 255
 recap_2:
