@@ -1,4 +1,4 @@
-user_configuration:
-  name: user configuration
+services_loaded:
+  name: services_loaded
   options:
     - ''
