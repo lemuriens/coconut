@@ -264,9 +264,6 @@
                       {
                         "entities": [
                           {
-                            "entity": "input_boolean.stores_day_night"
-                          },
-                          {
                             "entity": "input_number.sun_angle_cover_on"
                           },
                           {
