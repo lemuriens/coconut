@@ -37,3 +37,6 @@ speaker_night_mode_start:
     icon: mdi:speaker
     has_date: false
     has_time: true
+next_alarm_clock:
+    has_date: true
+    has_time: true
