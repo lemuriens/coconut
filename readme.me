@@ -236,32 +236,42 @@ binary_sensor.motion_sensor_158d00022b8f02:
     alias: détecteur de l'entrée
   
 # LIGHTS #######################################################################
+#color: on, off, both
 light.light_ambilight:
+    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "both" }
+    auto: { dayLight: true, lastLight: true, nightLight: true }
     linkedClass: light
     linkedArea: salon
-    colorTempRange: [210,400]
-    transitionRange: [1,30]
-    brightRange: [1,100]
-    hsSaturation: 100
-    color: "on"
-    dayLight: false
-    nightLight: true
-    lastLight: true
     alias: lumière ambilight
   
 light.light_salon:
+    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "on" }
+    auto: { dayLight: true, lastLight: true, nightLight: true }
     linkedClass: light
     linkedArea: salon
-    colorTempRange: [210,370]
-    transitionRange: [10,30]
-    brightRange: [1,80]
-    hsSaturation: 100
-    color: "off"
-    dayLight: false
-    nightLight: false
-    lastLight: true
     alias: lumière salon
-  
+    
+# LIGHTS CONTROLLER ############################################################
+sensor.knob_bureau_1_action:
+# reset 
+# turn_on / turn_off / toggle
+# brightness_step_up / brightness_step_down / brightness_step_loop
+# color_temp_step_up / color_temp_step_down / color_temp_step_loop
+# color_step_up / color_step_down
+# saturation_step_up / saturation_step_down
+    linkedLights:
+        - light.light_bureau_1
+    listen:
+        state:
+            unknown: "reset"        
+        new_state: 
+            toggle: "toggle"
+            brightness_step_up: "color_temp_step_loop"
+            brightness_step_down: "brightness_step_loop"
+            color_temperature_step_up: "saturation_step_up"
+            color_temperature_step_down: "color_step_up"
+    linkedClass: light_control
+    
 # SPEAKERS #####################################################################
 media_player.google_home:
     linkedClass: speaker
@@ -344,40 +354,47 @@ input_select.ambiance_salon:
     linkedAmbiance: ambiance_salon
     alias: liste de selection de l'ambiance du salon
 
+# CALENDAR #####################################################################
+calendar.home:
+    linkedClass: calendar
+    sendTo:
+      - Erwan
+
 # PERSONS ######################################################################
 # JHON ________________________________________________________________________
 person.JHON:
+    # LOCALISATION : IN APP HA compagnion ACTIVATE : BACKGROUND LOCALISATION (HIGH PRECISION)/ LOCALISATION ZONE
     linkedClass: person
-    linkedArea: chambre
-    alarm_clock: sensor.erwan_phone_next_alarm #{1: "08:00", 2: "08:00", 3: "08:00", 4: "08:00", 5: "08:00", 6: "08:00", 7: "08:00"}
-    alarm_clock_actions: [[call_service,{"domain":"media_player","service":"play_media","payload":{"data":{"entity_id":"media_player.google_home","media_content_id":"http://direct.franceinfo.fr/live/franceinfo-midfi.mp3?ID=76zqey582k","media_content_type":"music"}}}]]
-    mobileNotifications: mobile_app_JHON_phone
-    mobileErrors: true
+    #alarm_clock: sensor.marianne_phone_next_alarm #{1: "08:00", 2: "08:00", 3: "08:00", 4: "08:00", 5: "08:00", 6: "08:00", 7: "08:00"}
+    #alarm_clock_actions: [[]]
+    mobileAppName: mobile_app_
+    notifyMobileAppOnErrors: false
     sport:
         active: true
         days_to_ojective: 35
         objective_limits:
-            walk: [40 min, 40 min]
-            run: [20 min, 45 min]
+            #walk: [40 min, 40 min]
+            run: [40 min, 40 min]
             bodybuilding: [30 min, 50 min]
-            #bodybuilding: {"pompes": [10,200], "abdos": [80,400], "squats":[40,200], "planche":[1 min,5 min]}
-            swim: [60 min, 60 min]
-            fit: [40 min, 60 min]
-        objective_conditions: ["60% walk or run","walk to run"]
+            #swim: [60 min, 60 min]
+            #fit: [40 min, 60 min]
+        objective_conditions: ["70% run or pdd"]
+        #objective_conditions: ["60% walk or run","walk to run"]
         objective_translations: 
-            walk: marche
+            #walk: marche
             run: course à pied
             bodybuilding: musculation
-            swim: piscine
+            pdd: Puy de dôme
+            #swim: piscine
             weight: se peser
-            fit: sèche
+            #fit: sèche
         objective_calendar:
-            walk: { "1":false, "2":false, "3":true, "4":false, "5":false, "6":false, "7":true }
-            run: { "1":false, "2":false, "3":true, "4":true, "5":false, "6":true, "7":true }
-            bodybuilding: { "1":true, "2":false, "3":true, "4":false, "5":true, "6":false, "7":false }
-            weight: { "1":true, "2":false, "3":false, "4":false, "5":false, "6":false, "7":false }
-            fit: { "1":true, "2":true, "3":false, "4":true, "5":true, "6":false, "7":false }
-            swim: { "1":false, "2":false, "3":false, "4":false, "5":false, "6":false, "7":false }
+            #walk: { "1":false, "2":false, "3":true, "4":true, "5":false, "6":false, "7":false, "8":false, "9":false, "10":true, "11":false, "12":true, "13":false, "14":false }
+            run: { "1":false, "2":false, "3":true, "4":false, "5":true, "6":false, "7":false, "8":false, "9":false, "10":true, "11":true, "12":false, "13":false, "14":false }
+            pdd: { "1":false, "2":false, "3":false, "4":true, "5":false, "6":false, "7":false, "8":false, "9":false, "10":false, "11":true, "12":false, "13":false, "14":false }
+            #bodybuilding: {"pompes": [10,200], "abdos": [80,400], "squats":[40,200], "planche":[1 min,5 min]}
+            weight: { "1":true, "2":false, "3":false, "4":false, "5":false, "6":false, "7":false, "8":true, "9":false, "10":false, "11":false, "12":false, "13":false, "14":false}
+    name: Marianne
     name: JHON
   
 sensor.phone_next_alarm:
