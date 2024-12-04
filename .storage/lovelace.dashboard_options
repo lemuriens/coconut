@@ -309,7 +309,7 @@
                       "icon": "mdi:account-plus"
                     },
                     {
-                      "entity": "input_number.low_batteries"
+                      "entity": "input_number.low_battery_level"
                     }
                   ],
                   "title": "Autres paramètres",

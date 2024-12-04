@@ -97,8 +97,8 @@ humidity_max:
   max: 100
   unit_of_measurement: '%'
 ################################################################################
-low_batteries:
-  name: Alerte batteries faibles
+low_battery_level:
+  name: Niveau d'alerte batterie faible
   icon: mdi:battery-alert-variant-outline
   min: 5
   max: 30
