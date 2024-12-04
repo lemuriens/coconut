@@ -50,8 +50,8 @@ water_heat_temp:
   icon: mdi:toggle-switch
   name: Activation manuelle
 ################################################################################
-light_when_cloudy:
-  name: Lumière anti-nuages
+low_light_compensation:
+  name: Compensation faible luminosité
   icon: mdi:cloud-off-outline
 color_reverse:
     name: Inversion du sens de rotation des couleurs

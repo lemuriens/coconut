@@ -44,10 +44,10 @@
                             "entity": "input_number.illuminance_light"
                           },
                           {
-                            "entity": "input_boolean.light_when_cloudy"
+                            "entity": "input_boolean.low_light_compensation"
                           },
                           {
-                            "entity": "input_number.cloudy_light"
+                            "entity": "input_number.low_light_compensation"
                           },
                           {
                             "entity": "input_number.color_rotate"

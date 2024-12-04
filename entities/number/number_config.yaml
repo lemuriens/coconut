@@ -46,8 +46,8 @@ color_segment:
   min: 0
   max: 360
   unit_of_measurement: '°'
-cloudy_light:
-  name: Lumière anti-nuages
+low_light_compensation:
+  name: Compensation faible luminosité
   icon: mdi:cloud-off-outline
   min: 50
   max: 1000
