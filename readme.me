@@ -259,18 +259,29 @@ sensor.knob_bureau_1_action:
 # color_temp_step_up / color_temp_step_down / color_temp_step_loop
 # color_step_up / color_step_down
 # saturation_step_up / saturation_step_down
-    linkedLights:
-        - light.light_bureau_1
     listen:
-        state:
-            unknown: "reset"        
-        new_state: 
-            toggle: "toggle"
-            brightness_step_up: "color_temp_step_loop"
-            brightness_step_down: "brightness_step_loop"
-            color_temperature_step_up: "saturation_step_up"
-            color_temperature_step_down: "color_step_up"
-    linkedClass: light_control
+        - if: "action_type = tap_twice"
+          then: "auto"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight,light.light_salon]
+        - if: "action_value = pos_val"
+          then: "brightness_step_up"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
+        - if: "action_value = neg_val"
+          then: "brightness_step_down"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
+        - if: "action_type = free_fall"
+          then: "toggle"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
+        - if: "action_type = flip90"
+          then: "color_step_loop"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
+        - if: "action_type = flip180"
+          then: "color_temp_step_loop"
+          for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
+        - if: "action_type = shake_air"
+          then: "toggle"
+          for: [light.light_salon]
+    linked_class: light_control
     
 # SPEAKERS #####################################################################
 media_player.google_home:
@@ -279,22 +290,6 @@ media_player.google_home:
     linkedArea: salon
     defaultVolumeLevel: 0.5
     alias: Enceinte du salon
-
-# MAGIC CUBES ##################################################################
-binary_sensor.cube_158d00027d899f:
-    linkedClass: cube
-    linkedArea: salon
-    linkedType: bluetooth
-    linkedLights:
-        - light.light_ambilight
-        - light.light_salon
-        - light.light_cuisine
-        - light.light_table_cuisine
-        - light.light_band_bureau
-    linkedSpeaker: media_player.google_home
-    linkedAmbiance: ambiance_salon
-    linkedSelectAmbiance: input_select.ambiance_salon
-    alias: cube magique du salon
     
 # AMBIANCES ####################################################################    
 ambiance_config:
