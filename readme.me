@@ -288,7 +288,6 @@ media_player.google_home:
     linkedClass: speaker
     linkedDefault: true
     linkedArea: salon
-    defaultVolumeLevel: 0.5
     alias: Enceinte du salon
     
 # AMBIANCES ####################################################################    
@@ -296,57 +295,49 @@ ambiance_config:
     path: 
         start: https://storage.googleapis.com/relaxation-sounds/
         end: _3600.mp3
-# color: [hs,saturation,brightness]
-# variance: [0-360,0-100,0-100]
+    # color: [hs,saturation,brightness]
+    # variance: [0-360,0-100,0-100]
     ambiances_type:
-        stop:
-            name: Arrêt
-        forest:
-            name: Forêt
-            color: [83,80,80]
-            variance: [10,20,45]
-        river:
-            name: Rivière
-            color: [164,80,80]
-            variance: [10,20,45]
-        rain:
-            name: Pluie
-            color: [210,50,80]
-            variance: [10,10,45]
-        country_night:
-            name: Nuit
+        "Arret":
+            ambiance: stop
+        "Foret":
+            ambiance: forest
+            color: [85,50,50]
+            variance: [20,49,49]
+        "Riviere":
+            ambiance: river
+            color: [160,50,70]
+            variance: [30,49,30]
+        "Pluie":
+            ambiance: rain
+            color: [210,40,80]
+            variance: [20,30,45]
+        "Nuit":
+            ambiance: country_night
             color: [240,90,90]
-            variance: [20,10,45]
-        thunderstorm:
-            name: Orage
-            color: [240,100,80]
-            variance: [10,0,45]
-        fireplace:
-            name: Au coin du feu
+            variance: [20,10,10]
+        "Orage":
+            ambiance: thunderstorm
+            color: [220,100,50]
+            variance: [30,20,49]
+        "Au coin du feu":
+            ambiance: fireplace
             color: [30,70,90]
             variance: [10,30,45]
-        ocean:
-            name: Océan
+        "Ocean":
+            ambiance: ocean
             color: [180,90,80]
             variance: [20,10,45]
-ambiance_salon:
-    linkedClass: ambiance
-    linkedLights:
+
+input_select.ambiance_salon:
+    linked_class: ambiance
+    linked_area: salon
+    linked_lights:
         - light.light_ambilight
         - light.light_cuisine
         - light.light_table_cuisine
-        - light.light_entrance
-        - light.light_band_bureau
-    linkedSpeaker: media_player.google_home
-    linkedSelect: input_select.ambiance_salon
-    ambianceVolumeLevel: 0.65
-    radioVolumeLevel : 0.5
-    alias: ambiance du salon
-
-input_select.ambiance_salon:
-    linkedArea: salon
-    linkedClass: ambiance_select
-    linkedAmbiance: ambiance_salon
+    linked_speaker: media_player.google_home
+    ambiance_volume_level: 0.65
     alias: liste de selection de l'ambiance du salon
 
 # CALENDAR #####################################################################
