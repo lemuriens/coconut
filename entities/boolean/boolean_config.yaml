@@ -1,5 +1,8 @@
 ################################################################################
 user_configuration:
+reset_global_node_red:
+  icon: mdi:mdi:restore
+  name: vider les variables node-red
 ################################################################################
 modules_activation:
   icon: mdi:toogle-switch
