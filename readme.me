@@ -423,6 +423,7 @@ input_number.hc_vol:
         "decrease": b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2FAANBQAAAAAAAAAA
         
 # CONTROL DEVICES ##############################################################
+devices_control:
     input_boolean.in_home_zone:
         - if: '{{ states("input_boolean.in_home_zone") == "on" }}'
           then: [[switch.pc_table_cuisine,"on"]]
