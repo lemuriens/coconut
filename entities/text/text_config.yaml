@@ -45,5 +45,5 @@ json_exterior_average_temp:
 motions:
   max: 255
 ################################################################################
-alarm_security:
+security_alarm:
   max: 255

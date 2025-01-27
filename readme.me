@@ -100,6 +100,16 @@ EXEMPLE OF HOW TO CONFIGURE /homeassistant/home_configuration.yaml : ___
 # TTS VOICE ####################################################################
 tts_voice: edge_tts_say
 
+# SECURITY #####################################################################
+security:
+    linked_lights:
+        - light.light_entrance
+        
+sensor.security_action:
+    linked_class: security_panel
+    code: ["1_single","2_single","3_single","4_single","5_single","6_single","7_single","8_double"]
+    arming_time: 30
+    
 # ZONE #########################################################################
 zone.home:
 # metres
