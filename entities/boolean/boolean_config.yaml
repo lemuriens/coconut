@@ -81,7 +81,7 @@ motivation:
   name: Activités physiques
 motivation_resend:
   icon: mdi:refresh
-  name: Renvoyer les objectifs de la semaine
+  name: Renvoyer les objectifs
 motivation_reset:
   icon: mdi:backup-restore
   name: ⚠️ Recommencer au premier jour ⚠️
