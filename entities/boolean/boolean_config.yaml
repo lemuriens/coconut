@@ -44,6 +44,7 @@ in_big_zone:
 invitation:
   icon: mdi:account-plus
   name: Mode invitation
+security_alarm:
 ################################################################################
 heat:
   icon: mdi:radiator
