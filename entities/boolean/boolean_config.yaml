@@ -36,15 +36,12 @@ module_update:
 in_home_zone:
   icon: mdi:exit-run
   name: Dans la maison
-in_middle_zone:
-  icon: mdi:lock-open-variant-outline
-  name: Dans la zone moyenne
-in_big_zone:
-  name: Dans la grande zone
 invitation:
   icon: mdi:account-plus
   name: Mode invitation
 security_alarm:
+  icon: mdi:alarm-light
+  name: Alarm intrusion
 ################################################################################
 heat:
   icon: mdi:radiator
