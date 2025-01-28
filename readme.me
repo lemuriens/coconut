@@ -98,69 +98,57 @@
 EXEMPLE OF HOW TO CONFIGURE /homeassistant/home_configuration.yaml : ___
 # CONFIGURATION ################################################################
 # TTS VOICE ####################################################################
-tts_voice: edge_tts_say
+tts_voice: edge_tts_say (mandatory)
 
 # SECURITY #####################################################################
-security:
-    linked_lights:
+security: (optional)
+    linked_lights: (optional)
         - light.light_entrance
         
-sensor.security_action:
-    linked_class: security_panel
-    code: ["1_single","2_single","3_single","4_single","5_single","6_single","7_single","8_double"]
-    arming_time: 30
-    
+sensor.security_action: (optional)
+    linked_class: security_panel (mandatory)
+    code: ["1_single","2_single","3_single","4_single","5_single","6_single","7_single","8_double"] (mandatory)
+    arming_time: 30 (optional, default 30)
+     
 # ZONE #########################################################################
-zone.home:
-# metres
-    input_boolean.in_home_zone: 50
-    input_boolean.in_middle_zone: 1000
-    input_boolean.in_big_zone: 70000
 
-zone.magasin_aldi:
-    googleKeepList: "https://keep.google.com/u/0/#LIST/"
+zone.magasin_aldi: (optional)
+    google_keep_list: "https://keep.google.com/u/0/#LIST/" (mandatory)
 
-zone.magasin_petit_auchan:
-    googleKeepList: "https://keep.google.com/u/0/#LIST/"
+zone.magasin_petit_auchan: (optional)
+    google_keep_list: "https://keep.google.com/u/0/#LIST/" (mandatory)
 
-zone.carrefour_market:
-    googleKeepList: "https://keep.google.com/u/0/#LIST/"
-  
-# ILLUMINANCE ##################################################################
-sensor.ext_ill_illuminance_lux:
-    linkedClass: illuminance
-    linkedArea: exterior
-    linkedEntity: input_number.illuminance_light
-    alias: Luminosité exterieure
+zone.carrefour_market: (optional)
+    google_keep_list: "https://keep.google.com/u/0/#LIST/" (mandatory)
 
 # TEMPERATURES #################################################################
 # EXTERIOR TEMPERATURES ########################################################
-sensor.0xa4c138efbeff5a69_temperature:
-    linkedClass: ext_temperature
-    linkedArea: exterior
-    linkedEntity: input_number.temp_ext
-    alias: exterieure
+sensor.0xa4c138efbeff5a69_temperature: (optional)
+    linked_class: ext_temperature (mandatory)
+    linked_area: exterior (mandatory)
+    linked_entity: input_number.temp_ext (mandatory)
+    alias: exterieure (optional)
   
 # INTERIOR TEMPERATURES ########################################################
-sensor.ble_temperature_582d34362a4d:
-    linkedClass: int_temperature
-    linkedEntity: input_number.temp_int_1
-    linkedArea: salon
-    alias: de la maison
+sensor.ble_temperature_582d34362a4d: (optional)
+    linked_class: int_temperature (mandatory)
+    linked_entity: input_number.temp_int_1 (mandatory)
+    linked_area: salon (mandatory)
+    alias: de la maison (optional)
   
 # EXTERIOR HUMIDITIES ##########################################################
-sensor.0xa4c138efbeff5a69_humidity:
-    linkedClass: ext_humidity
-    linkedEntity: input_number.humidity_ext
-    linkedArea: exterior
-    alias: exterieure
+sensor.0xa4c138efbeff5a69_humidity: (optional)
+    linked_class: ext_humidity (mandatory)
+    linked_entity: input_number.humidity_ext (mandatory)
+    linked_area: exterior (mandatory)
+    alias: exterieure (optional)
 
 # INTERIOR HUMIDITIES ##########################################################
-sensor.ble_humidity_582d34362a4d:
-    linkedClass: int_humidity
-    linkedEntity: input_number.humidity_int_1
-    linkedArea: salon
-    alias: de la maison
+sensor.ble_humidity_582d34362a4d: (optional)
+    linked_class: int_humidity (mandatory)
+    linked_entity: input_number.humidity_int_1 (mandatory)
+    linked_area: salon (mandatory)
+    alias: de la maison (optional)
         
 # CONVECTORS ###################################################################
  convector_config:
@@ -169,8 +157,8 @@ sensor.ble_humidity_582d34362a4d:
      input_boolean.in_big_zone: 12
     
  switch.switch_chauffage_salon:
-     linkedClass: convector
-     linkedArea: salon
+     linked_class: convector
+     linked_area: salon
      schedule: 
          - "00:00": [16.5,false]
          - "08:00": [17,false]
@@ -181,93 +169,92 @@ sensor.ble_humidity_582d34362a4d:
     
  WATER HEAT ###################################################################
  switch.switch_chauffe_eau:
-   linkedClass: water_heat
+   linked_class: water_heat
    onTime: ["01:24","12:24"]
    offTime: ["07:24","14:24"]
    alias: de la maison
   
  VENTILATION ##################################################################
  switch.switch_vmc:
-     linkedClass: ventilation
-     linkedArea: salon
+     linked_class: ventilation
+     linked_area: salon
      onTime: ["05:24","12:24"]
      offTime: ["07:24","14:24"]
      alias: du salon
      
 # ILLUMINANCE ##################################################################
-sensor.ext_ill_illuminance_lux:
-    linkedClass: illuminance
-    linkedArea: exterior
-    linkedEntity: input_number.illuminance_light
-    alias: Luminosité exterieure
+sensor.ext_ill_illuminance_lux: (optional)
+    linked_class: illuminance (mandatory)
+    linked_area: exterior (mandatory)
+    linked_entity: input_number.illuminance_light (mandatory)
 
 # WINDOWS ######################################################################
-binary_sensor.door_window_sensor_158d0003f41d3e:
-    linkedClass: window
-    linkedArea: salon
-    security_entrance: true
-    alias: du bureau
+binary_sensor.door_window_sensor_158d0003f41d3e: (optional)
+    linked_class: window (mandatory)
+    linked_area: salon (mandatory)
+    security_entrance: true (mandatory)
+    alias: du bureau (optional)
 
-binary_sensor.door_window_sensor_158d00039fe5b9:
-    linkedClass: window
-    linkedArea: chambre_1
-    security_entrance: false
-    alias: de la chambre
+binary_sensor.door_window_sensor_158d00039fe5b9: (optional)
+    linked_class: window (mandatory)
+    linked_area: chambre_1 (mandatory)
+    security_entrance: false (mandatory)
+    alias: de la chambre (optional)
 
 # COVERS #######################################################################
-input_number.cover_salon:
-    linkedWindow: binary_sensor.door_window_sensor_158d0003e841d6
-    linkedDevice: cover.volet_salon
-    linkedClass: cover
-    linkedArea: salon
-    timeToAeration: 3.3
-    timeToOpen: 22.5
-    timeToClose: 22.5
-    morning_open_if: '{{ states("input_boolean.mode_canape") == "off" and global.cubes.salon.free_fall == false }}'
-    alias: du salon
+input_number.cover_salon: (optional)
+    linkedWindow: binary_sensor.door_window_sensor_158d0003e841d6 (mandatory)
+    linked_device: cover.volet_salon (mandatory)
+    linked_class: cover (mandatory)
+    linked_area: salon (mandatory)
+    timeToAeration: 3.3 (mandatory)
+    timeToOpen: 22.5 (mandatory)
+    timeToClose: 22.5 (mandatory)
+    morning_open_if: '{{ states("input_boolean.mode_canape") == "off" and global.cubes.salon.free_fall == false }}' (optional)
+    alias: du salon (optional)
     
 # MOTIONS ######################################################################
-binary_sensor.door_window_sensor_158d0003d47e37:
-    linkedClass: motion
-    linkedArea: entree
-    addNoMotionDelay: 180
-    invertedMotion: false
-    security_entrance: true
-    alias: capteur de l'entrée
+binary_sensor.door_window_sensor_158d0003d47e37: (optional)
+    linked_class: motion (mandatory)
+    linked_area: entree (mandatory)
+    addNoMotionDelay: 180 (optional)
+    invertedMotion: false (optional)
+    security_entrance: true (optional)
+    alias: capteur de l'entrée (optional)
 
-binary_sensor.motion_sensor_158d00022b8f02:
-    linkedClass: motion  
-    linkedArea: entree
-    addNoMotionDelay: 0
-    invertedMotion: false
-    security_entrance: false
-    alias: détecteur de l'entrée
+binary_sensor.motion_sensor_158d00022b8f02: (optional)
+    linked_class: motion (mandatory)
+    linked_area: entree (mandatory)
+    addNoMotionDelay: 0 (optional)
+    invertedMotion: false (optional)
+    security_entrance: false (optional)
+    alias: détecteur de l'entrée (optional)
   
 # LIGHTS #######################################################################
 #color: on, off, both
-light.light_ambilight:
-    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "both" }
-    auto: { dayLight: true, lastLight: true, nightLight: true }
-    linkedClass: light
-    linkedArea: salon
-    alias: lumière ambilight
+light.light_ambilight: (optional)
+    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "both" } (mandatory)
+    auto: { dayLight: true, lastLight: true, nightLight: true } (mandatory)
+    linked_class: light (mandatory)
+    linked_area: salon (mandatory)
   
-light.light_salon:
-    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "on" }
-    auto: { dayLight: true, lastLight: true, nightLight: true }
-    linkedClass: light
-    linkedArea: salon
-    alias: lumière salon
+light.light_salon: (optional)
+    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "on" } (mandatory)
+    auto: { dayLight: true, lastLight: true, nightLight: true } (mandatory)
+    linked_class: light (mandatory)
+    linked_area: salon (mandatory)
     
 # LIGHTS CONTROLLER ############################################################
-sensor.knob_bureau_1_action:
-# reset 
-# turn_on / turn_off / toggle
-# brightness_step_up / brightness_step_down / brightness_step_loop
-# color_temp_step_up / color_temp_step_down / color_temp_step_loop
-# color_step_up / color_step_down
-# saturation_step_up / saturation_step_down
-    listen:
+sensor.knob_bureau_1_action: (optional)
+(available actions :
+    # reset 
+    # turn_on / turn_off / toggle
+    # brightness_step_up / brightness_step_down / brightness_step_loop
+    # color_temp_step_up / color_temp_step_down / color_temp_step_loop
+    # color_step_up / color_step_down
+    # saturation_step_up / saturation_step_down
+)
+    listen: (optional)
         - if: "action_type = tap_twice"
           then: "auto"
           for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight,light.light_salon]
@@ -289,17 +276,15 @@ sensor.knob_bureau_1_action:
         - if: "action_type = shake_air"
           then: "toggle"
           for: [light.light_salon]
-    linked_class: light_control
+    linked_class: light_control (mandatory)
     
 # SPEAKERS #####################################################################
-media_player.google_home:
-    linkedClass: speaker
-    linkedDefault: true
-    linkedArea: salon
-    alias: Enceinte du salon
+media_player.google_home: (optional)
+    linked_class: speaker (mandatory)
+    linked_area: salon (mandatory)
     
 # AMBIANCES ####################################################################    
-ambiance_config:
+ambiance_config: (mandatory)
     path: 
         start: https://storage.googleapis.com/relaxation-sounds/
         end: _3600.mp3
@@ -337,49 +322,47 @@ ambiance_config:
             color: [180,90,80]
             variance: [20,10,45]
 
-input_select.ambiance_salon:
-    linked_class: ambiance
-    linked_area: salon
-    linked_lights:
+input_select.ambiance_salon: (optional)
+    linked_class: ambiance (mandatory)
+    linked_area: salon (mandatory)
+    linked_lights: (mandatory)
         - light.light_ambilight
         - light.light_cuisine
         - light.light_table_cuisine
-    linked_speaker: media_player.google_home
-    ambiance_volume_level: 0.65
-    alias: liste de selection de l'ambiance du salon
+    linked_speaker: media_player.google_home (mandatory)
+    ambiance_volume_level: 0.65 (mandatory)
 
 # CALENDAR #####################################################################
-calendar.home:
-    linkedClass: calendar
-    alias: FAMILY CALENDAR
-    sendTo:
+calendar.home: (optional)
+    linked_class: calendar (mandatory)
+    alias: FAMILY CALENDAR (optional)
+    send_to: (optional)
       - Jhon
 
 # PERSONS ######################################################################
 # JHON ________________________________________________________________________
-person.JHON:
+person.JHON: (optional)
     # LOCALISATION : IN APP HA compagnion ACTIVATE : BACKGROUND LOCALISATION (HIGH PRECISION)/ LOCALISATION ZONE
-    mobileAppName: mobile_app_
-    linkedClass: person
-    linkedArea: bedroom
-    alarm_clock: [sensor.jhon_phone_next_alarm  or {1: "08:00", 2: "08:00", 3: "08:00", 4: "08:00", 5: "08:00", 6: "08:00", 7: "08:00"}]
-    alarm_clock_actions: [["input_boolean.bedroom_cover","on"]]
-    sport: sport.jhon
-    name: JHON
+    mobile_app_name: mobile_app_ (optional)
+    linked_class: person (mandatory)
+    alarm_clock: [sensor.jhon_phone_next_alarm  or {1: "08:00", 2: "08:00", 3: "08:00", 4: "08:00", 5: "08:00", 6: "08:00", 7: "08:00"}] (optional)
+    alarm_clock_actions: [["input_boolean.bedroom_cover","on"]] (optional)
+    sport: sport.jhon (optional)
+    name: JHON (mandatory)
   
 # SPORT CONFIGURATION
-sport.JHON:
-    days_to_ojective: 35
-    objective_limits:
+sport.JHON: (optional)
+    days_to_ojective: 35 (mandatory)
+    objective_limits: (mandatory)
         run: [40 min, 40 min]
         bodybuilding: [30 min, 50 min]
-    objective_conditions: ["70% run or pdd", "walk to run"]
-    objective_translations: 
+    objective_conditions: ["70% run or pdd", "walk to run"] (optional)
+    objective_translations: (optional)
         run: course à pied
         bodybuilding: musculation
         pdd: Puy de dôme
         weight: se peser
-    objective_calendar:
+    objective_calendar: (mandatory)
         run: { "1":false, "2":false, "3":true, "4":false, "5":true, "6":false, "7":false, "8":false, "9":false, "10":true, "11":true, "12":false, "13":false, "14":false }
         bodybuilding: { "1":true, "2":false, "3":true, "4":false, "5":true, "6":false, "7":false, "8":true, "9":false, "10":true, "11":false, "12":true, "13":false, "14":false }
         pdd: { "1":false, "2":false, "3":false, "4":true, "5":false, "6":false, "7":false, "8":false, "9":false, "10":false, "11":true, "12":false, "13":false, "14":false }
@@ -387,51 +370,37 @@ sport.JHON:
         weight: { "1":true, "2":false, "3":false, "4":false, "5":false, "6":false, "7":false, "8":true, "9":false, "10":false, "11":false, "12":false, "13":false, "14":false}
   
 # IN HA COMPANION ACTIVATE : NEXT ALARM
-sensor.jhon_phone_next_alarm:
-    linkedClass: next_alarm
+sensor.jhon_phone_next_alarm: (optional)
+    linked_class: next_alarm (mandatory)
   
-sensor.phone_phone_state:
 # IN APP ACTIVATE : PHONE STATE
-    config:
-        linkedClass: phone_state
-        linkedPerson: person.jhon
+sensor.phone_phone_state: (optional)
+    linked_class: phone_state (mandatory)
 
 # REMOTE #######################################################################
-input_boolean.vp_power:
-    linkedClass: remote
-    linkedDevice: remote.remote_remote
-    remote:
-        "on": 
-          num_repeats: 1
-          delay_secs: 0
-          command: ["b64:JgCgAJiPFC4UDBUMFQwVLBUMFQwVDBUtFA0TDRQuFA0UDRMOEw0UkBQNEw4TDRQNFC4TDhMNFC4ULhMNFA0ULhMOEy4ULhMOEw4TLhQuEw4TAAdbl5ATLhQNFA0UDRMuFA0UDRQNEy4UDRQNFC4TDhMNFA0UDRSPFA0UDRQNFA0TLhQNFA0ULhMuFA0UDRQuEw0ULhQuEw0UDRQ"]
-        "off": 
-          num_repeats: 3
-          delay_secs: 1.5
-          command: ["b64:AAAA","b64:BBBB"]
-
-input_boolean.hc_hdmi:
-    linkedClass: remote
-    linkedDevice: remote.remote_remote
-    remote:
-        "on": 
-          num_repeats: 2
-          delay_secs: 3
-          command: ["b64:siE0AAogCh8fDAofHwweCwsgCh8LHx4MCh8fDB8LHwsfDAofCx8fCx8LHgwKHx8LCh8KIAoAATo"]
-        "off": 
-          num_repeats: 2
-          delay_secs: 3
-          command: ["b64:sh40AAsfCh8fCwofHwsfCwofCh8LHx8LCh8fCx8LHwsfCwofCh8fCx8LHwsLHwofCh8fCwoAATk"]
+input_boolean.vp_power: (optional)
+    linked_class: remote (mandatory)
+    linked_device: remote.remote_remote (mandatory)
+    remote: (mandatory)
+        "on": (optional)
+          num_repeats: 1 (optional, default 1)
+          delay_secs: 0 (optional, default 0)
+          commands: ["b64:JgCgAJiPFC4UDB"]
+        "off": (optional)
+          num_repeats: 3 (optional, default 1)
+          delay_secs: 1.5 (optional, default 0)
+          delay_between_commands: (optional, default 0)
+          commands: ["b64:AAAA","b64:BBBB"]
     
-input_number.hc_vol:
-    linkedClass: remote
-    linkedDevice: remote.remote_remote
-    remote:
-        "increase": ["b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYAD"]
-        "decrease": ["b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2F"]
+input_number.hc_vol: (optional)
+    linked_class: remote (mandatory)
+    linked_device: remote.remote_remote (mandatory)
+    remote: (mandatory)
+        "increase": ["b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYAD"] (mandatory)
+        "decrease": ["b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2F"] (mandatory)
         
 # CONTROL DEVICES ##############################################################
-devices_control:
+devices_control: (optional)
     calendar_cleaner_on:
         - if: 'true':
           then: [[input_boolean.cleaner,"on"]]
