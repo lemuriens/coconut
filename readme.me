@@ -218,14 +218,14 @@ binary_sensor.motion_sensor_158d00022b8f02: (optional)
 # LIGHTS #######################################################################
 #color: on, off, both
 light.light_ambilight: (optional)
-    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "both" } (mandatory)
-    auto: { dayLight: true, lastLight: true, nightLight: true } (mandatory)
+    parameters: { color_temp_range: [200,220], transition_range: [1,20], bright_range: [80,100], hs_saturation: 100, color: "both" } (mandatory for auto light)
+    auto: { day_light: false, last_light: true, night_light: true } (mandatory for auto light)
     linked_class: light (mandatory)
     linked_area: salon (mandatory)
   
-light.light_salon: (optional)
-    parameters: { colorTempRange: [210,400], transitionRange: [1,30], brightRange: [1,100], hsSaturation: 100, color: "on" } (mandatory)
-    auto: { dayLight: true, lastLight: true, nightLight: true } (mandatory)
+light.yeelight_color4_0x1c27d865: (optional)
+    parameters: { color_temp_range: [200,220], transition_range: [1,20], bright_range: [80,100], hs_saturation: 100, color: "both" } (mandatory for auto light)
+    auto: { day_light: false, last_light: true, night_light: true } (mandatory for auto light)
     linked_class: light (mandatory)
     linked_area: salon (mandatory)
     
