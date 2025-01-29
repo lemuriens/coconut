@@ -166,21 +166,6 @@ sensor.ble_humidity_582d34362a4d: (optional)
          - "18:00": [18.5,false]
          - "23:00": [16.5,false]
      alias: chauffage du salon
-    
- WATER HEAT ###################################################################
- switch.switch_chauffe_eau:
-   linked_class: water_heat
-   onTime: ["01:24","12:24"]
-   offTime: ["07:24","14:24"]
-   alias: de la maison
-  
- VENTILATION ##################################################################
- switch.switch_vmc:
-     linked_class: ventilation
-     linked_area: salon
-     onTime: ["05:24","12:24"]
-     offTime: ["07:24","14:24"]
-     alias: du salon
      
 # ILLUMINANCE ##################################################################
 sensor.ext_ill_illuminance_lux: (optional)
@@ -338,6 +323,8 @@ calendar.home: (optional)
     alias: FAMILY CALENDAR (optional)
     send_to: (optional)
       - Jhon
+# if you want to launch something with the event calendar, put devices_control:"calendar_cleaner_on" in the calendar description and it will be launched
+# of corse, "calendar_cleaner_on" need to exist in devices_control.
 
 # PERSONS ######################################################################
 # JHON ________________________________________________________________________
