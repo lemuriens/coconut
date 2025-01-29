@@ -517,7 +517,7 @@
               "cards": [
                 {
                   "type": "markdown",
-                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n}}"
+                  "content": "{{\nstates(\"input_text.recap_1\")\n+states(\"input_text.recap_2\")\n+states(\"input_text.recap_3\")\n+states(\"input_text.recap_4\")\n+states(\"input_text.recap_5\")\n+states(\"input_text.recap_6\")\n+states(\"input_text.recap_7\")\n+states(\"input_text.recap_8\")\n+states(\"input_text.recap_9\")\n+states(\"input_text.recap_10\")\n}}"
                 }
               ]
             },
