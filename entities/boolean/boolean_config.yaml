@@ -31,6 +31,9 @@ module_ventilation:
 module_alarm_clock:
   icon: mdi:alarm
   name: Réveil
+module_security_intrusion:
+  icon: mdi:shield-home-outline
+  name: Sécurité intrusion
 module_update:
 ################################################################################
 in_home_zone:
