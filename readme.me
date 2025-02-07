@@ -392,9 +392,10 @@ devices_control: (optional)
         - if: 'true':
           then: [[input_boolean.cleaner,"on"]]
     # Put in the desciption of the event you want: devices_control:"calendar_cleaner_on". When the event state will be "on", this will launch "calendar_cleaner_on"
+    # [action object: to directly acces call service node | emulate object: emulate device state | once : executed on time a day | notification object: send notif on phones]
     input_boolean.in_home_zone:
         - if: '{{ states("input_boolean.in_home_zone") == "on" }}'
-          then: [[switch.pc_table_cuisine,"on"]]
+          then: [[action,{"domain":"media_player","service":"select_source","payload":{"data":{"entity_id":"media_player.spotify_","source":"VAN"}}}]]
         - if: '{{ states("input_boolean.in_home_zone") == "off" }}'
           then: [[input_boolean.hc_power,"off"],[input_boolean.vp_power,"off"],[input_boolean.mode_canape,"off"],[switch.pc_table_cuisine,"off"]]
         - if: '{{ states("input_boolean.in_home_zone") == "off" and states("input_boolean.invitation") == "off" }}'
