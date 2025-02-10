@@ -517,7 +517,7 @@
               "cards": [
                 {
                   "type": "markdown",
-                  "content": "{{states(\"sensor.file_notification\")}}"
+                  "content": "{{states(\"input_text.notification_1\")}}\n{{states(\"input_text.notification_2\")}}\n{{states(\"input_text.notification_3\")}}\n{{states(\"input_text.notification_4\")}}\n{{states(\"input_text.notification_5\")}}\n{{states(\"input_text.notification_6\")}}\n{{states(\"input_text.notification_7\")}}\n{{states(\"input_text.notification_8\")}}\n{{states(\"input_text.notification_9\")}}\n{{states(\"input_text.notification_10\")}}"
                 }
               ]
             },
@@ -716,7 +716,7 @@
                   "card": {
                     "type": "custom:html-template-card",
                     "ignore_line_breaks": true,
-                    "content": "{{states(\"input_text.health_stats_1\")}}{{states(\"input_text.health_stats_2\")}}{{states(\"input_text.health_stats_3\")}}{{states(\"input_text.health_stats_4\")}}\n"
+                    "content": "{{states(\"input_text.motivation_1\")}}\n{{states(\"input_text.motivation_2\")}}\n{{states(\"input_text.motivation_3\")}}\n{{states(\"input_text.motivation_4\")}}\n"
                   }
                 },
                 {

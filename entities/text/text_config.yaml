@@ -3,25 +3,39 @@ heat_temp:
   name: Consigne
   icon: mdi:home-thermometer-outline
 ################################################################################
-health_stats_1:
-  name: Statistiques entrainements santé
+notification_1:
   max: 255
-health_stats_2:
-  name: Statistiques entrainements santé
+notification_2:
   max: 255
-health_stats_3:
-  name: Statistiques entrainements santé
+notification_3:
   max: 255
-health_stats_4:
-  name: Statistiques entrainements santé
+notification_4:
+  max: 255
+notification_5:
+  max: 255
+notification_6:
+  max: 255
+notification_7:
+  max: 255
+notification_8:
+  max: 255
+notification_9:
+  max: 255
+notification_10:
+  max: 255
+################################################################################
+motivation_1:
+  max: 255
+motivation_2:
+  max: 255
+motivation_3:
+  max: 255
+motivation_4:
   max: 255
 ################################################################################
 json_activities:
   max: 255
 json_exterior_average_temp:
-  max: 255
-################################################################################
-motions:
   max: 255
 ################################################################################
 security_alarm:
