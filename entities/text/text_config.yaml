@@ -3,27 +3,6 @@ heat_temp:
   name: Consigne
   icon: mdi:home-thermometer-outline
 ################################################################################
-recap_1:
-  max: 255
-recap_2:
-  max: 255
-recap_3:
-  max: 255
-recap_4:
-  max: 255
-recap_5:
-  max: 255
-recap_6:
-  max: 255
-recap_7:
-  max: 255
-recap_8:
-  max: 255
-recap_9:
-  max: 255
-recap_10:
-  max: 255
-################################################################################
 health_stats_1:
   name: Statistiques entrainements santé
   max: 255
