@@ -232,7 +232,8 @@ light.yeelight_color4_0x1c27d865: (optional)
 # LIGHTS CONTROLLER ############################################################
 sensor.knob_bureau_1_action: (optional)
 (available actions :
-    # reset 
+    # auto
+    # auto_turn_on / auto_turn_off / auto_toggle
     # turn_on / turn_off / toggle
     # brightness_step_up / brightness_step_down / brightness_step_loop
     # color_temp_step_up / color_temp_step_down / color_temp_step_loop
@@ -260,6 +261,7 @@ sensor.knob_bureau_1_action: (optional)
           for: [light.light_band_bureau,light.light_table_cuisine,light.light_cuisine,light.light_ambilight]
         - if: "action_type = shake_air"
           then: "toggle"
+          transition: 2 (optional)
           for: [light.light_salon]
     linked_class: light_control (mandatory)
     
@@ -387,32 +389,67 @@ input_number.hc_vol: (optional)
         "decrease": ["b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2F"] (mandatory)
         
 # CONTROL DEVICES ##############################################################
-devices_control: (optional)
-    calendar_cleaner_on:
-        - if: 'true':
-          then: [[input_boolean.cleaner,"on"]]
-    # Put in the desciption of the event you want: devices_control:"calendar_cleaner_on". When the event state will be "on", this will launch "calendar_cleaner_on"
-    # [action object: to directly acces call service node | emulate object: emulate device state | once : executed on time a day | notification object: send notif on phones]
-    input_boolean.in_home_zone:
-        - if: '{{ states("input_boolean.in_home_zone") == "on" }}'
-          then: [[action,{"domain":"media_player","service":"select_source","payload":{"data":{"entity_id":"media_player.spotify_","source":"VAN"}}}]]
-        - if: '{{ states("input_boolean.in_home_zone") == "off" }}'
-          then: [[input_boolean.hc_power,"off"],[input_boolean.vp_power,"off"],[input_boolean.mode_canape,"off"],[switch.pc_table_cuisine,"off"]]
-        - if: '{{ states("input_boolean.in_home_zone") == "off" and states("input_boolean.invitation") == "off" }}'
-          then: [[emulate.binary_sensor.cube_158d00027d899f,{"linkedType":"zigbee","new_state":"tap"}]]
-    binary_sensor.door_window_sensor_158d0003d4dfec:
-        - if: '{{ states("input_boolean.in_home_zone") == "on" and states("binary_sensor.door_window_sensor_158d0003d4dfec") == "on" and states("input_boolean.mode_canape") == "on" }}'
-          then: [wait 0.7,'{{states("binary_sensor.door_window_sensor_158d0003d4dfec") == "off" }}',[[input_boolean.mode_canape,"off"]]]        
-    input_boolean.mode_canape:
-        - if: '{{ states("input_boolean.in_home_zone") == "on" and states("input_boolean.mode_canape") == "on" }}'
-          then: [[input_boolean.ec_projection,"on"],[input_boolean.vp_power,"on",43],[emulate.binary_sensor.cube_158d00027d899f,{"linkedType":"zigbee","new_state":"fall"},60]]
-    binary_sensor.door_window_sensor_158d0003f41d3e:
-        - if: '{{ states("binary_sensor.door_window_sensor_158d0003f41d3e") == "off" and states("input_boolean.stores_status") == "on" and states("input_boolean.mode_canape") == "on" }}'
-          then: [[input_number.cover_bureau,0]]
-    binary_sensor.door_window_sensor_158d0003e841d6:
-        - if: '{{ states("binary_sensor.door_window_sensor_158d0003e841d6") == "on" and states("input_boolean.stores_status") == "on" and states("input_boolean.mode_canape") == "on" }}'
-          then: [[input_number.cover_salon,0]]
-    devices_control:
-        binary_sensor.hw100_b14959u1_loquet_de_la_porte:
-            - if: '{{states("binary_sensor.hw100_b14959u1_loquet_de_la_porte") == on }}'
-              then: [[notification,{"title":"Machine à laver","message":"Machine à laver: Le programme est terminé","speak":"Le programme de la machine à laver est terminé", "lightEffect":{"count":5, "rgbs": [[0,100,255], [0,255,50]]}}]]
+devices_controls: (optional)
+################################################################################
+    input_text.filmobot_status:
+        - if: '{{ states("input_text.filmobot_status") == "bad_status_code" }}'
+          then:
+            notification: {"notification_id":"bad_status_code","message":"🤖 > Je rencontre un soucis humain !","send_mobile": true}
+        - if: '{{ states("input_text.filmobot_status") != "bad_status_code" }}'
+          then:
+            notification: {"notification_id":"{{as_timestamp(now(),default)|int}}","message":"🤖 > Nouveau film: {{states('input_text.filmobot_status')}}", "data": {"sticky":true, "clickAction":"https://www.google.fr/search?q={{states('input_text.filmobot_status')}}"},"send_mobile":true}
+################################################################################
+    sensor.washing_machine_end_time:
+        - if: '{{ states("sensor.washing_machine_end_time") == "unknown" and states("input_boolean.lave_linge") == "on" }}'
+          then:
+            notification: {"notification_id":"washing_machine","message":"Lave-linge: Vous pouvez enlever vos vêtements 🧼 👕 🫧","speak":"Vous pouvez maintenant enlever vos vêtements du lave linge","send_mobile":true}
+            input_boolean.lave_linge: off
+    binary_sensor.washing_machine_remote_control:
+        - if: '{{ states("binary_sensor.washing_machine_remote_control") == "on" }}'
+          then:
+            - input_boolean.lave_linge: on
+    input_boolean.lave_linge:
+        - if: '{{ states("input_boolean.lave_linge") == "on" }}'
+          then: 
+            'wait {{ states("binary_sensor.washing_machine_remote_control") == "on" }} for 600':
+              action: 
+                {"payload":{"domain":"hon","service":"start_program","target":{"device_id":["e1db1a684ed95a6f5a6ee"]},"data":{"program":"hqd_smart","parameters":"{}"}}}
+              timeout:
+################################################################################
+    sensor.dish_washer_end_time:
+        - if: '{{ states("sensor.dish_washer_end_time") == "unknown" and states("input_boolean.lave_vaisselle") == "on" }}'
+          then:
+            notification: {"notification_id":"dish_washing_machine","message":"Lave-vaisselle: Vous pouvez enlever votre vaisselle 🧼 🍽 ️🫧️","speak":"Vous pouvez maintenant enlever votre vaisselle","send_mobile":true}
+            input_boolean.lave_vaisselle: off
+    binary_sensor.dish_washer_status:
+        - if: '{{ states("binary_sensor.dish_washer_status") == "on" and states("input_boolean.lave_vaisselle") == "off" }}'
+          then:
+            input_boolean.lave_vaisselle: on
+    input_boolean.lave_vaisselle:
+        - if: '{{ states("input_boolean.lave_vaisselle") == "on" }}'
+          then:
+            'wait {{ states("binary_sensor.dish_washer_remote_control") == "on" }} for 600':
+              action: 
+                {"payload":{"domain":"hon","service":"start_program","target":{"device_id":["bdcf99d82f8d649092"]},"data":{"program":"iot_voice_eco","parameters":'{"openDoor":1,"extraDry":1,"halfLoad":0,"lightStatus":0}'}}}
+              timeout:
+################################################################################
+    select.knob_bureau_1_operation_mode:
+        - if: '{{ states("select.knob_bureau_1_operation_mode") == "event" }}'
+          then:
+            input_boolean.volet_salon: toggle
+            input_boolean.volet_bureau: toggle
+            select.knob_bureau_1_operation_mode: command
+    select.knob_bureau_2_operation_mode:
+        - if: '{{ states("select.knob_bureau_2_operation_mode") == "event" }}'
+          then:
+            input_boolean.volet_salon: toggle
+            input_boolean.volet_bureau: toggle
+            select.knob_bureau_2_operation_mode: command
+################################################################################
+    binary_sensor.motion_chambre_1_presence:
+        - if: '{{ states("binary_sensor.motion_chambre_1_presence") == "off" and states("sensor.motion_chambre_1_illuminance")|float >= 250}}'
+          then:
+            'wait {{ states("binary_sensor.motion_chambre_1_presence") == "on" }} for 120':
+              action:
+              timeout:
+                emulate.sensor.switch_chambre_1_action: {"linked_class":"light_control","new_state":"hold"}
