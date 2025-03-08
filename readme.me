@@ -230,6 +230,11 @@ light.yeelight_color4_0x1c27d865: (optional)
     linked_area: salon (mandatory)
     
 # LIGHTS CONTROLLER ############################################################
+google_assistant_lights_control:
+(auto lock lights when an action is done by home assistant using voice, to unlock set brightness to 42)
+    light.light_band_bureau
+    light.light_table_cuisine
+
 sensor.knob_bureau_1_action: (optional)
 (available actions :
     # auto
