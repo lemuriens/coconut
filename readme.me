@@ -372,21 +372,18 @@ input_boolean.vp_power: (optional)
     linked_device: remote.remote_remote (mandatory)
     remote: (mandatory)
         "on": (optional)
-          num_repeats: 1 (optional, default 1)
-          delay_secs: 0 (optional, default 0)
-          commands: ["b64:JgCgAJiPFC4UDB"]
+          - { "command": "b64:JgAUAGUiGTIyFzIYMhcYMjIYGDIyAA0FAAAAAA==", "delay": 0 } (mandatory)
+          - { "command": "b64:JgA4AGUiGTIyFxkyGDIyGDIXGDIyGGUiGDIyGBgyGTIyFzIYGDIyF2UjGDIyGBgyGDIyGDIXGTIyAA0F", "delay": 10 } (optional)
         "off": (optional)
-          num_repeats: 3 (optional, default 1)
-          delay_secs: 1.5 (optional, default 0)
-          delay_between_commands: (optional, default 0)
-          commands: ["b64:AAAA","b64:BBBB"]
+          - { "command": "b64:JgA4AGchGjA0FhkxMxYaMRowMxczqmUjGDIyFxkyMhcYMxgyMhcyrGUiGTIyFxkxMhgZMRoxMhcyAA0F", "delay": 0 } (mandatory)
     
 input_number.hc_vol: (optional)
     linked_class: remote (mandatory)
     linked_device: remote.remote_remote (mandatory)
+    delay: 0.5 (mandatory)
     remote: (mandatory)
-        "increase": ["b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYAD"] (mandatory)
-        "decrease": ["b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2F"] (mandatory)
+        "increase": "b64:JgCOABcOFjQWDhcOFzMWDxYzFzMWMxcOFzMWMxcOFzMWMxcOFw4WMhgOFw4XDhYPFg8WDxYzFg8WMxczFjQWMxczFjMXAASlE0UAASyQFg8WMxYPFg8WMxcOFjQWMxcyFw8WMxczFg8WMxY0Fg8WDxYzFg8WDxYPFg4XDhYPFjMXDhczFjQWMxYxGTMXMxYAD" (mandatory)
+        "decrease": "b64:JgCQAAABKZIWDxU1FBEUEBU1FRAVNBY0FDUVEBQ2FDYUEBU1FDUWDxQ2FDUWDxQRFRAUERQRFBAUERUQFDUVNRQ2FDUUNhQ1FQAE/wABKZIVEBQ2FBEUERQ1FBEUNRU1FDYUERQ1FDYUEBU1FDYUEBU1FDYUEBUQFBEUERQRFBAVEBQRFDYUNRQ2FDUVNRQ2F" (mandatory)
         
 # CONTROL DEVICES ##############################################################
 devices_controls: (optional)
