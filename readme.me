@@ -376,7 +376,15 @@ input_boolean.vp_power: (optional)
           - { "command": "b64:JgA4AGUiGTIyFxkyGDIyGDIXGDIyGGUiGDIyGBgyGTIyFzIYGDIyF2UjGDIyGBgyGDIyGDIXGTIyAA0F", "delay": 10 } (optional)
         "off": (optional)
           - { "command": "b64:JgA4AGchGjA0FhkxMxYaMRowMxczqmUjGDIyFxkyMhcYMxgyMhcyrGUiGTIyFxkxMhgZMRoxMhcyAA0F", "delay": 0 } (mandatory)
-    
+
+input_boolean.hc_power: (optional)
+    linked_class: remote (mandatory)
+    linked_device: remote.remote_remote (mandatory)
+    turn_off_after_command: true (optional, in this case input_boolean.hc_power will be turned off after the command is send)
+    remote: (mandatory)
+        "on": (optional)
+          - { "command": "b64:JgAUAGUiGTIyFzIYMhcYMjIYGDIyAA0FAAAAAA==", "delay": 0 } (mandatory)
+   
 input_number.hc_vol: (optional)
     linked_class: remote (mandatory)
     linked_device: remote.remote_remote (mandatory)
