@@ -45,6 +45,9 @@ invitation:
 security_alarm:
   icon: mdi:alarm-light
   name: Alarm intrusion
+home_recap:
+  icon: mdi:home-edit
+  name: Récapitulatif maison
 ################################################################################
 heat:
   icon: mdi:radiator
