@@ -40,3 +40,6 @@ speaker_night_mode_start:
 next_alarm_clock:
     has_date: true
     has_time: true
+next_event:
+    has_date: true
+    has_time: true

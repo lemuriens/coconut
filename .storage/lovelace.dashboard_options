@@ -517,7 +517,7 @@
               "cards": [
                 {
                   "type": "markdown",
-                  "content": "{{states(\"input_text.notification_1\")}}\n{{states(\"input_text.notification_2\")}}\n{{states(\"input_text.notification_3\")}}\n{{states(\"input_text.notification_4\")}}\n{{states(\"input_text.notification_5\")}}\n{{states(\"input_text.notification_6\")}}\n{{states(\"input_text.notification_7\")}}\n{{states(\"input_text.notification_8\")}}\n{{states(\"input_text.notification_9\")}}\n{{states(\"input_text.notification_10\")}}"
+                  "content": "{{states(\"input_text.notification_1\")}}{{states(\"input_text.notification_2\")}}{{states(\"input_text.notification_3\")}}{{states(\"input_text.notification_4\")}}{{states(\"input_text.notification_5\")}}{{states(\"input_text.notification_6\")}}{{states(\"input_text.notification_7\")}}{{states(\"input_text.notification_8\")}}{{states(\"input_text.notification_9\")}}{{states(\"input_text.notification_10\")}}"
                 }
               ]
             },
