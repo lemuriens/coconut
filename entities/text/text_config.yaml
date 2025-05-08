@@ -37,6 +37,3 @@ json_activities:
   max: 255
 json_exterior_average_temp:
   max: 255
-################################################################################
-security_alarm:
-  max: 255
