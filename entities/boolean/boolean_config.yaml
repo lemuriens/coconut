@@ -38,6 +38,9 @@ module_update:
 ################################################################################
 in_home_zone:
   icon: mdi:exit-run
+  name: Dans la zone maison
+at_home:
+  icon: mdi:exit-run
   name: Dans la maison
 invitation:
   icon: mdi:account-plus
@@ -92,3 +95,4 @@ motivation_reset:
 ################################################################################
 update_available_on_lemuriens_coconut:
 update_from_lemuriens_coconut:
+################################################################################

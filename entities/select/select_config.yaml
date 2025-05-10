@@ -2,10 +2,3 @@ services_loaded:
     name: services_loaded
     options:
         - ''
-security_alarm:
-    options:
-        - disarmed
-        - wait_to_go
-        - arming
-        - wait_to_enter
-        - armed
