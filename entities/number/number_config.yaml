@@ -63,14 +63,20 @@ illuminance_light:
   max: 100000
   unit_of_measurement: 'Lux'
 ################################################################################
-sun_angle_cover_on:
-  name: Angle du soleil ouverture volets
-  icon: mdi:weather-sunset-up
-  min: -15
-  max: 15
-  unit_of_measurement: '°'
-sun_angle_cover_off:
-  name: Angle du soleil fermeture volets
+# sun_angle_cover_on:
+#   name: Angle du soleil ouverture volets
+#   icon: mdi:weather-sunset-up
+#   min: -15
+#   max: 15
+#   unit_of_measurement: '°'
+# sun_angle_cover_off:
+#   name: Angle du soleil fermeture volets
+#   icon: mdi:weather-sunset-up
+#   min: -15
+#   max: 15
+#   unit_of_measurement: '°'
+sun_angle_day_time:
+  name: Angle du soleil cycle jour / nuit
   icon: mdi:weather-sunset-up
   min: -15
   max: 15

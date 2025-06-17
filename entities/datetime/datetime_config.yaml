@@ -29,17 +29,17 @@ sun_light_time_rising:
     icon: mdi:lightbulb-group
     has_date: false
     has_time: true
-speaker_day_mode_start:
-    icon: mdi:speaker
-    has_date: false
-    has_time: true
-speaker_night_mode_start:
-    icon: mdi:speaker
-    has_date: false
-    has_time: true
 next_alarm_clock:
     has_date: true
     has_time: true
 next_event:
     has_date: true
+    has_time: true
+day_time :
+    name: Début de journée
+    has_date: false
+    has_time: true
+night_time:
+    name: Fin de journée
+    has_date: false
     has_time: true

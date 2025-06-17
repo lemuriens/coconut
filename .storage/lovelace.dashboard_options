@@ -35,10 +35,10 @@
                             "entity": "input_number.sun_light_angle_dusk_dawn"
                           },
                           {
-                            "entity": "input_datetime.sun_light_time_midnight"
+                            "entity": "input_datetime.sun_light_time_dawn"
                           },
                           {
-                            "entity": "input_datetime.sun_light_time_dawn"
+                            "entity": "input_datetime.sun_light_time_midnight"
                           },
                           {
                             "entity": "input_number.illuminance_light"
@@ -276,22 +276,27 @@
                   ],
                   "card": {
                     "type": "vertical-stack",
-                    "cards": [
-                      {
-                        "entities": [
-                          {
-                            "entity": "input_number.sun_angle_cover_on"
-                          },
-                          {
-                            "entity": "input_number.sun_angle_cover_off"
-                          }
-                        ],
-                        "title": "Volets roulants",
-                        "type": "entities",
-                        "state_color": false
-                      }
-                    ]
+                    "cards": []
                   }
+                },
+                {
+                  "entities": [
+                    {
+                      "entity": "input_number.sun_angle_day_time"
+                    },
+                    {
+                      "entity": "input_datetime.day_time"
+                    },
+                    {
+                      "entity": "input_datetime.night_time"
+                    },
+                    {
+                      "entity": "input_boolean.is_day_time"
+                    }
+                  ],
+                  "title": "Cycle Jour / Nuit",
+                  "type": "entities",
+                  "show_header_toggle": false
                 },
                 {
                   "type": "conditional",
@@ -319,32 +324,10 @@
                   }
                 },
                 {
-                  "entities": [
-                    {
-                      "entity": "input_boolean.invitation",
-                      "icon": "mdi:account-plus"
-                    },
-                    {
-                      "entity": "input_number.low_battery_level"
-                    }
-                  ],
-                  "title": "Autres paramètres",
-                  "type": "entities",
-                  "show_header_toggle": false
-                },
-                {
                   "type": "entities",
                   "entities": [
-                    {
-                      "entity": "input_datetime.speaker_day_mode_start",
-                      "name": "Heure de déclenchement du mode jour"
-                    },
                     {
                       "entity": "input_number.speaker_day_mode_volume"
-                    },
-                    {
-                      "entity": "input_datetime.speaker_night_mode_start",
-                      "name": "Heure de déclenchement du mode nuit"
                     },
                     {
                       "entity": "input_number.speaker_night_mode_volume"
@@ -449,6 +432,20 @@
                       }
                     ]
                   }
+                },
+                {
+                  "entities": [
+                    {
+                      "entity": "input_boolean.invitation",
+                      "icon": "mdi:account-plus"
+                    },
+                    {
+                      "entity": "input_number.low_battery_level"
+                    }
+                  ],
+                  "title": "Autres paramètres",
+                  "type": "entities",
+                  "show_header_toggle": false
                 }
               ]
             },

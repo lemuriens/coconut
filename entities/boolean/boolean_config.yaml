@@ -96,3 +96,5 @@ motivation_reset:
 update_available_on_lemuriens_coconut:
 update_from_lemuriens_coconut:
 ################################################################################
+is_day_time:
+    name: Cycle Jour / Nuit
