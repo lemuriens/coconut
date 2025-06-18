@@ -291,7 +291,9 @@
                       "entity": "input_datetime.night_time"
                     },
                     {
-                      "entity": "input_boolean.is_day_time"
+                      "entity": "input_boolean.is_day_time",
+                      "name": "En journée",
+                      "icon": "mdi:theme-light-dark"
                     }
                   ],
                   "title": "Cycle Jour / Nuit",
