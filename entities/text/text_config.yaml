@@ -1,7 +1,6 @@
 ################################################################################
 heat_temp:
   name: Consigne
-  icon: mdi:home-thermometer-outline
 ################################################################################
 notification_1:
   max: 255
@@ -36,4 +35,8 @@ motivation_4:
 json_activities:
   max: 255
 json_exterior_average_temp:
+  max: 255
+################################################################################
+active_calls: 
+  name: Appels en cours
   max: 255
