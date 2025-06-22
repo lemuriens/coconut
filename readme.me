@@ -366,6 +366,12 @@ sensor.jhon_phone_next_alarm: (optional)
 sensor.phone_phone_state: (optional)
     linked_class: phone_state (mandatory)
 
+# PLANT ########################################################################
+sensor.ble_moisture_c47c8d6c0085: (optional)
+    linked_class: plant (mandatory)
+    name: Les bananiers (mandatory)
+    limits: [20,80] (optional, default: [20,80])
+
 # REMOTE #######################################################################
 input_boolean.vp_power: (optional)
     linked_class: remote (mandatory)
