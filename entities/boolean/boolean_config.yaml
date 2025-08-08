@@ -51,6 +51,9 @@ security_alarm:
 home_recap:
   icon: mdi:home-edit
   name: Récapitulatif maison
+still_open:
+  icon: mdi:home-edit
+  name: Récapitulatif ouvertures portes et fenêtres
 ################################################################################
 heat:
   icon: mdi:radiator
