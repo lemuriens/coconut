@@ -329,7 +329,19 @@
                   "type": "entities",
                   "entities": [
                     {
+                      "entity": "input_boolean.speaker_day_time"
+                    },
+                    {
+                      "entity": "input_datetime.speaker_day_time"
+                    },
+                    {
                       "entity": "input_number.speaker_day_mode_volume"
+                    },
+                    {
+                      "entity": "input_boolean.speaker_night_time"
+                    },
+                    {
+                      "entity": "input_datetime.speaker_night_time"
                     },
                     {
                       "entity": "input_number.speaker_night_mode_volume"

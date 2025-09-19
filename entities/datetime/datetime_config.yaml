@@ -43,3 +43,11 @@ night_time:
     name: Fin de journée
     has_date: false
     has_time: true
+speaker_day_time:
+    name: Début de journée
+    has_date: false
+    has_time: true
+speaker_night_time:
+    name: Fin de journée
+    has_date: false
+    has_time: true

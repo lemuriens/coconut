@@ -76,6 +76,12 @@ alert_light:
 alert_speaker:
   name: Alerte audio
   icon: mdi:home-thermometer-outline
+speaker_day_time:
+  name: Enceinte en journée
+  icon: mdi:speaker
+speaker_night_time:
+  name: Enceinte en soirée
+  icon: mdi:speaker
 ################################################################################
 reveil:
   icon: mdi:alarm
